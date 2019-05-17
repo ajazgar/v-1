@@ -12,13 +12,14 @@ public class Flight {
     private String departureDate;
     private String arrivalDate;
     private String flightClass;
+    private String time;
     private float price;
 
-    public int getId() {
+    public int getFlightId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setFlightId(int id) {
         this.id = id;
     }
 
@@ -57,6 +58,10 @@ public class Flight {
     public void setFlightClass(String flightClass) {
         this.flightClass = flightClass;
     }
+
+    public String getTime() { return time; }
+
+    public void setTime(String time) { this.time = time; }
 
     public float getPrice() { return price; }
 

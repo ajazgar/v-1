@@ -1,0 +1,45 @@
+<table class="table table-borderless" *ngFor="let b of flights">
+  <thead>
+  <tr>
+    <th scope="col">Nazwa linii</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row" *ngIf="b.departureCity === 'Berlin'"><img src="../../../assets/img/screen1.jpg"/></th>
+    <td>
+      <span>{{b.departureCity}}</span>
+      <span>{{b.departureDate}}</span>
+    </td>
+    <td>{{b.time}}</td>
+    <td>
+      <span>{{b.arrivalCity}}</span>
+      <span>{{b.arrivalTime}}</span>
+    </td>
+
+    <td class="column-price" style="opacity: 0 !important;">
+      <span style="color: transparent;"></span>
+      <app-btn-primary [btnText]="'Znajdź podobne'"></app-btn-primary>
+    </td>
+  </tr>
+
+  <tr class="row-down">
+    <th scope="row">Logo</th>
+    <td>
+      <span>BGY 30 maj</span>
+      <span>Lotnisko Mediolan Bergamo-Orio al Serio</span>
+    </td>
+    <td>2h 00min</td>
+    <td>
+      <span>WAW</span>
+      <span>Lotnisko Warszawa Lotnisko Chopina</span>
+    </td>
+
+    <td class="column-price">
+      <span>{{b.price}} PLN</span>
+      <app-btn-primary [btnText]="'Znajdź podobne'"></app-btn-primary>
+    </td>
+  </tr>
+
+  </tbody>
+</table>

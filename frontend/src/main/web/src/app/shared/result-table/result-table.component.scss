@@ -1,0 +1,30 @@
+@import "../../shared/component-styles/item-flex";
+
+:host {
+  display: flex;
+  padding: 0 140px;
+  flex-direction: column;
+
+  .table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+    .column-price {
+      height: 100%;
+      background-color: transparent;
+    }
+
+    tr {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    img {
+      width: 20%;
+    }
+  }
+}

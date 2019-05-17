@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="83.5" height="74.055" viewBox="0 0 83.5 74.055">
+  <g id="conversation-icon" transform="translate(-86.5 -47)">
+    <g id="Group" transform="translate(87 47)">
+      <path id="Combined-Shape-Copy-2" d="M34.5-30H43a5,5,0,0,0,5-5V-71.555a2,2,0,0,0-2-2,2,2,0,0,0-1.326.5l-6.7,5.935a3,3,0,0,1-1.99.755H5a5,5,0,0,0-5,5v8.222H30.5a4,4,0,0,1,4,4Z" transform="translate(48) rotate(180)" fill="#fcbb51" stroke="#707070" stroke-width="1"/>
+      <path id="Combined-Shape" d="M17,1.5A3.5,3.5,0,0,0,13.5,5V49.334a3.5,3.5,0,0,0,3.5,3.5H65.767a4.5,4.5,0,0,1,3,1.149l11.9,10.661a.5.5,0,0,0,.834-.372V5A3.5,3.5,0,0,0,78,1.5Z" fill="none" stroke="#d4d4ce" stroke-width="3" fill-rule="evenodd"/>
+      <circle id="Oval" cx="3.5" cy="3.5" r="3.5" transform="translate(30 23)" fill="#d4d4ce"/>
+      <circle id="Oval-Copy" cx="3.5" cy="3.5" r="3.5" transform="translate(43 23)" fill="#d4d4ce"/>
+      <circle id="Oval-Copy-2" cx="3.5" cy="3.5" r="3.5" transform="translate(56 23)" fill="#d4d4ce"/>
+    </g>
+  </g>
+</svg>

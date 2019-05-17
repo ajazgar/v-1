@@ -1,0 +1,33 @@
+@import "../component-styles/item-flex";
+
+
+:host {
+  display: flex;
+  justify-content: center;
+
+  .btn-wrapper {
+    width: auto;
+    background-color: transparent;
+    border: 1px solid #D4D4CE;
+    cursor: pointer;
+    justify-content: center;
+    margin: 24px 0;
+
+    .btn-text {
+      color: #D4D4CE;
+    }
+  }
+}
+
+:host-context(.btn-modal) {
+
+  .btn-wrapper {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 0 !important;
+
+    .btn-text {
+      color: #023246;
+    }
+  }
+}

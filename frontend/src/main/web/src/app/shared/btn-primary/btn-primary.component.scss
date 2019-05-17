@@ -1,0 +1,19 @@
+@import "../component-styles/item-flex";
+
+:host {
+
+  .btn-primary {
+    background-color: #FF5252;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+}
+
+:host-context(.btn-primary--modal) {
+
+  .btn-primary--modal[type="submit"] {
+    border: none;
+  }
+
+}

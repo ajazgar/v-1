@@ -1,0 +1,16 @@
+:host {
+
+  .modal-content {
+    background-color: #D4D4CE;
+
+    .modal-body, .modal-footer, .modal-header {
+      display: flex !important;
+      justify-content: center !important;
+    }
+
+    form {
+      width: 70%;
+    }
+
+  }
+}

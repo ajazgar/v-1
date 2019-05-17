@@ -1,0 +1,17 @@
+<div class="drp-wrapper">
+  <div class="drp-input item-flex" (click)="toggleDropdown()">
+    <img src="../../../assets/icons/ic_group_24px.svg" class="icon-drp">
+    <div class="drp-text">ekonomiczna
+    </div>
+    <img src="../../../assets/icons/ic_keyboard_arrow_down_24px.svg" class="icon-drp">
+  </div>
+
+  <div class="drp-list item-flex" *ngIf="dropdownOpened">
+    <span class="drp-list__title">Klasa</span>
+    <div class="drp-list__scroll" >
+      <span id="travel" *ngFor="let flight of flights">
+        {{flight.flightClass}}
+      </span>
+    </div>
+  </div>
+</div>

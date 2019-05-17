@@ -1,0 +1,50 @@
+<div class="search-header">
+  <div class="header-text" (click)="checkOneWay()" [ngClass]="{'checked': isOneWay}">W jedną stronę</div>
+  <div class="header-text" (click)="checkTwoWays()" [ngClass]="{'checked': isTwoWays}">W dwie strony</div>
+</div>
+
+<div class="search">
+  <div class="search-container">
+    <div class="item-flex">
+      <img src="../../../assets/icons/ic_flight_takeoff_24px.svg" class="icon-drp">
+      <input class="item-flex" placeholder="Skąd?" (click)="openDepartureDropdown()">
+
+      <div class="input-drp" *ngIf="isInputClicked">
+        <div class="input-drp--wrapper">
+          <span *ngFor="let city of flights">{{city.departureCity}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="item-flex" *ngIf="!isOneWay && isTwoWays">
+      <img src="../../../assets/icons/ic_flight_land_24px.svg" class="icon-drp">
+      <input class="item-flex" placeholder="Dokąd?" (click)="openArrivalDropdown()">
+
+      <div class="input-drp" *ngIf="isArrivalClicked">
+        <div class="input-drp--wrapper">
+          <span *ngFor="let city of flights">{{city.arrivalCity}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="item-flex">
+      <img src="../../../assets/icons/ic_date_range_24px.svg" class="icon-drp">
+      <input class="item-flex" placeholder="pon. 25.03 - pon. 25.03" (click)="openCalendar()">
+
+      <div class="input-drp" *ngIf="isCalendarClicked" style="min-width: 128%">
+        <div class="input-drp--wrapper">
+          <span *ngFor="let date of flights">{{date.departureDate}} - {{date.arrivalDate}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <app-dropdown></app-dropdown>
+
+    <app-btn-primary [btnText]="'Wyszukaj'"></app-btn-primary>
+  </div>
+
+
+</div>

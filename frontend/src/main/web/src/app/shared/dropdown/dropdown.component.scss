@@ -1,0 +1,56 @@
+@import "../component-styles/item-flex";
+@import "../component-styles/icon-drp";
+
+:host {
+  display: flex;
+
+  .drp-wrapper {
+    position: relative;
+
+
+    .item-flex {
+      padding: 0;
+      position: relative;
+    }
+
+    .drp-input {
+      cursor: pointer;
+    }
+
+    .drp-list {
+      display: flex;
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      position: absolute;
+      z-index: 1;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      padding: 12px;
+
+      &__scroll {
+        width: 100%;
+        margin: 12px 0;
+
+        span:hover {
+          background-color: #D4D4CE;
+        }
+      }
+
+      &__title {
+        display: flex;
+        align-self: flex-start;
+        border-bottom: 1px solid #D4D4CE;
+        width: 100%;
+      }
+
+
+      span {
+        cursor: pointer;
+        display: flex;
+        align-self: flex-start;
+        width: 100%;
+      }
+    }
+  }
+
+}
