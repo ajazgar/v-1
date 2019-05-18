@@ -26,6 +26,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.isTwoWays = true;
 
+
     this.resultTableService.getFlight().subscribe(data => {
       this.flights = data;
     },
@@ -48,18 +49,6 @@ export class SearchComponent implements OnInit {
   checkTwoWays() {
     this.isOneWay = false;
     this.isTwoWays = true;
-  }
-
-  openDepartureDropdown() {
-    this.isInputClicked = !this.isInputClicked;
-  }
-
-  openArrivalDropdown() {
-    this.isArrivalClicked = !this.isArrivalClicked;
-  }
-
-  openCalendar() {
-    this.isCalendarClicked = !this.isCalendarClicked;
   }
 
 }

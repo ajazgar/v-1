@@ -1,53 +1,37 @@
 <div class="search-header">
-  <div class="header-text" (click)="checkOneWay()" [ngClass]="{'checked': isOneWay}">W jedną stronę</div>
-  <div class="header-text" (click)="checkTwoWays()" [ngClass]="{'checked': isTwoWays}">W dwie strony</div>
+  <div class="header-text">Wybierz lot</div>
 </div>
 
 <div class="search">
   <div class="search-container">
-    <div class="item-flex">
 
-      <img src="../../../assets/icons/ic_flight_takeoff_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="Skąd?" list="departure">
-        <datalist id="departure">
-          <option *ngFor="let city of flights" value="{{city.departureCity}}"></option>
-        </datalist>
+      <table class="table table-hover">
+        <thead>
+          <th scope="col">#</th>
+          <th scope="col">Wylot</th>
+          <th scope="col">Przylot</th>
+          <th scope="col">Data wylotu</th>
+          <th scope="col">Data przylotu</th>
+          <th scope="col">Klasa lotu</th>
+          <th scope="col">Czas lotu</th>
+          <th scope="col">Cena (PLN)</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of flights">
+            <td>{{flight.id}}</td>
+            <td>{{flight.departureCity}}</td>
+            <td>{{flight.arrivalCity}}</td>
+            <td>{{flight.departureDate}}</td>
+            <td>{{flight.arrivalDate}}</td>
+            <td>{{flight.flightClass}}</td>
+            <td>{{flight.time}}</td>
+            <td>{{flight.price}}</td>
+          </tr>
+        </tbody>
 
-    </div>
+      </table>
 
-    <div class="item-flex" *ngIf="!isOneWay && isTwoWays">
-      <img src="../../../assets/icons/ic_flight_land_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="Dokąd?" list="arrival">
-
-
-        <datalist  id="arrival">
-          <option *ngFor="let city of flights" value="{{city.arrivalCity}}"></option>
-        </datalist>
-
-    </div>
-
-    <div class="item-flex">
-      <img src="../../../assets/icons/ic_date_range_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="pon. 25.03 - pon. 25.03" list="date">
-
-
-        <datalist id="date">
-          <option *ngFor="let date of flights" value="{{date.departureDate}} - {{date.arrivalDate}}"></option>
-        </datalist>
-
-    </div>
-
-    <div class="item-flex">
-      <img src="../../../assets/icons/ic_group_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="pon. 25.03 - pon. 25.03" list="flightClass">
-
-      <datalist id="flightClass">
-        <option *ngFor="let flightClass of flights" value="{{flightClass.flightClass}}"></option>
-      </datalist>
-
-    </div>
-
-    <app-btn-primary [btnText]="'Wyszukaj'"></app-btn-primary>
+    <app-btn-primary [btnText]="'Zarezerwuj' "style="margin: 0 3px" routerLink="/loty/recommended"></app-btn-primary>
   </div>
 
 

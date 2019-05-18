@@ -6,6 +6,7 @@ public class Passenger {
     private String name;
     private String surname;
     private String email;
+    private boolean discount;
 
     public int getPassengerId() {
         return id;
@@ -39,5 +40,12 @@ public class Passenger {
         this.email = email;
     }
 
+    public boolean getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(boolean discount) {
+        this.discount = discount;
+    }
 
 }
