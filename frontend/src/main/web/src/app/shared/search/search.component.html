@@ -6,42 +6,46 @@
 <div class="search">
   <div class="search-container">
     <div class="item-flex">
-      <img src="../../../assets/icons/ic_flight_takeoff_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="Skąd?" (click)="openDepartureDropdown()">
 
-      <div class="input-drp" *ngIf="isInputClicked">
-        <div class="input-drp--wrapper">
-          <span *ngFor="let city of flights">{{city.departureCity}}</span>
-        </div>
-      </div>
+      <img src="../../../assets/icons/ic_flight_takeoff_24px.svg" class="icon-drp">
+      <input class="item-flex" placeholder="Skąd?" list="departure">
+        <datalist id="departure">
+          <option *ngFor="let city of flights" value="{{city.departureCity}}"></option>
+        </datalist>
 
     </div>
 
     <div class="item-flex" *ngIf="!isOneWay && isTwoWays">
       <img src="../../../assets/icons/ic_flight_land_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="Dokąd?" (click)="openArrivalDropdown()">
+      <input class="item-flex" placeholder="Dokąd?" list="arrival">
 
-      <div class="input-drp" *ngIf="isArrivalClicked">
-        <div class="input-drp--wrapper">
-          <span *ngFor="let city of flights">{{city.arrivalCity}}</span>
-        </div>
-      </div>
+
+        <datalist  id="arrival">
+          <option *ngFor="let city of flights" value="{{city.arrivalCity}}"></option>
+        </datalist>
 
     </div>
 
     <div class="item-flex">
       <img src="../../../assets/icons/ic_date_range_24px.svg" class="icon-drp">
-      <input class="item-flex" placeholder="pon. 25.03 - pon. 25.03" (click)="openCalendar()">
+      <input class="item-flex" placeholder="pon. 25.03 - pon. 25.03" list="date">
 
-      <div class="input-drp" *ngIf="isCalendarClicked" style="min-width: 128%">
-        <div class="input-drp--wrapper">
-          <span *ngFor="let date of flights">{{date.departureDate}} - {{date.arrivalDate}}</span>
-        </div>
-      </div>
+
+        <datalist id="date">
+          <option *ngFor="let date of flights" value="{{date.departureDate}} - {{date.arrivalDate}}"></option>
+        </datalist>
 
     </div>
 
-    <app-dropdown></app-dropdown>
+    <div class="item-flex">
+      <img src="../../../assets/icons/ic_group_24px.svg" class="icon-drp">
+      <input class="item-flex" placeholder="pon. 25.03 - pon. 25.03" list="flightClass">
+
+      <datalist id="flightClass">
+        <option *ngFor="let flightClass of flights" value="{{flightClass.flightClass}}"></option>
+      </datalist>
+
+    </div>
 
     <app-btn-primary [btnText]="'Wyszukaj'"></app-btn-primary>
   </div>

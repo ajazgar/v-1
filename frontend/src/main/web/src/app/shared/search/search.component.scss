@@ -64,29 +64,35 @@
     input:focus {
       outline: none;
     }
+
+    input::-webkit-calendar-picker-indicator {
+      display: none;
+    }
   }
 
-  .input-drp {
-    display: flex;
-    background-color: #ffffff;
-    flex-direction: column;
-    position: absolute;
-    z-index: 1;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    padding: 12px;
-    width: 100%;
-    border-radius: 8px;
-    top: 48px;
+  datalist {
+    //display: flex;
+    //background-color: #ffffff !important;
+    //flex-direction: column;
+    //position: absolute;
+    //z-index: 1;
+    //box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    //padding: 12px;
+    //width: 100%;
+    //border-radius: 8px;
+    //top: 48px;
 
-    &--wrapper {
-      display: flex;
-      flex-direction: column;
-    }
+    //&--wrapper {
+    //  display: flex;
+    //  flex-direction: column;
+    //}
 
     span {
       flex-direction: column;
+      align-items: center;
       cursor: pointer;
-      height: 24px;
+      height: 36px;
+      padding: 6px;
     }
 
     span:hover {
