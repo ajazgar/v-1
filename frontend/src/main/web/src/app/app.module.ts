@@ -21,6 +21,7 @@ import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BsDropdownModule, ModalModule, TooltipModule} from "ngx-bootstrap";
+import { ReservationComponent } from './shared/reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {BsDropdownModule, ModalModule, TooltipModule} from "ngx-bootstrap";
     CarsComponent,
     HotelsComponent,
     FlightsComponent,
-    DiscoverComponent
+    DiscoverComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

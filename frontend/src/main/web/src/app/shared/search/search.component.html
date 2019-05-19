@@ -16,8 +16,8 @@
           <th scope="col">Czas lotu</th>
           <th scope="col">Cena (PLN)</th>
         </thead>
-        <tbody>
-          <tr *ngFor="let flight of flights">
+        <tbody *ngFor="let flight of flights; let i = index" (click)="chooseFlight(i)">
+          <tr [ngClass]="{'active': isFlightChosen === i}">
             <td>{{flight.id}}</td>
             <td>{{flight.departureCity}}</td>
             <td>{{flight.arrivalCity}}</td>
@@ -31,8 +31,8 @@
 
       </table>
 
-    <app-btn-primary [btnText]="'Zarezerwuj' "style="margin: 0 3px" routerLink="/loty/recommended"></app-btn-primary>
+    <app-btn-primary [btnText]="'Zarezerwuj' "style="margin: 0 3px" routerLink="/loty/rezerwacja" ></app-btn-primary>
   </div>
 
-
 </div>
+
