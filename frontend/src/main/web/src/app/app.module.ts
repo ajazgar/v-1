@@ -22,6 +22,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BsDropdownModule, ModalModule, TooltipModule} from "ngx-bootstrap";
 import { ReservationComponent } from './shared/reservation/reservation.component';
+import { BookingComponent } from './pages/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ReservationComponent } from './shared/reservation/reservation.component
     HotelsComponent,
     FlightsComponent,
     DiscoverComponent,
-    ReservationComponent
+    ReservationComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

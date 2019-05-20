@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  padding: 0 140px;
+  justify-content: center;
+  margin-bottom: 24px;
+
+  form {
+    display: flex !important;
+    background-color: #D4D4CE;
+    width: 50%;
+    border-radius: 8px;
+    padding: 24px 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    justify-content: center !important;
+    flex-direction: column;
+
+    .form-group {
+      width: 60%;
+      align-self: center;
+    }
+  }
+}

@@ -30,3 +30,11 @@
     box-shadow: none;
   }
 }
+
+:host-context(.form-btn) {
+
+  .btn-primary {
+    max-width: 150px;
+  }
+}
+

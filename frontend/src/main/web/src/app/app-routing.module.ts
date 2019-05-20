@@ -6,6 +6,7 @@ import {DiscoverComponent} from './pages/discover/discover.component';
 import {FlightsComponent} from './pages/flights/flights.component';
 import {ResultTableComponent} from './shared/result-table/result-table.component';
 import {ReservationComponent} from "./shared/reservation/reservation.component";
+import {BookingComponent} from "./pages/booking/booking.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/loty', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
     {path: 'samochody', component: CarsComponent},
     {path: 'discover', component: DiscoverComponent},
     {path: 'loty/recommended', component: ResultTableComponent},
-    {path: 'loty/rezerwacja/:id', component: ReservationComponent}
+    {path: 'loty/rezerwacja/:id', component: ReservationComponent},
+    {path: 'loty/booking', component: BookingComponent}
 ];
 
 @NgModule({
