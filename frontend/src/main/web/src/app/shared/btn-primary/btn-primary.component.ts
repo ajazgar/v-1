@@ -9,10 +9,12 @@ export class BtnPrimaryComponent implements OnInit {
 
   @Input() btnText: string;
   @Input() isBtnDisabled: boolean;
+  @Input() flightID: number;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.flightID);
   }
 
 }

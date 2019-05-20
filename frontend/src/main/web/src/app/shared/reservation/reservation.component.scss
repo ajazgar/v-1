@@ -15,16 +15,15 @@
 
     .column-price {
       height: 100%;
-      background-color: transparent;
     }
 
     tr {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
 
     img {
-      width: 20%;
+      width: 100%;
     }
   }
 }

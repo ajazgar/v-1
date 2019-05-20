@@ -29,6 +29,7 @@ export class SearchComponent implements OnInit {
   chooseFlight(index) {
     this.isFlightChosen = index;
     this.disableButton = false;
+    console.log(this.isFlightChosen);
   }
 
 

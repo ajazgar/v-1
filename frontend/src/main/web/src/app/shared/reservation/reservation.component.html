@@ -1,51 +1,56 @@
+<div class="table-responsive">
 <table class="table table-borderless">
   <thead>
   <tr>
-    <th scope="col">Nazwa linii</th>
+    <th class="col">Nazwa linii</th>
+    <th class="col">Wylot</th>
+    <th class="col">Przylot</th>
+    <th class="col">Data wylotu</th>
+    <th class="col">Data przylotu</th>
+    <th class="col">Czas lotu</th>
+    <th class="col">Klasa lotu</th>
+    <td class="col">
+      <app-btn-primary class="btn-none" [btnText]="'Rezerwuj'"></app-btn-primary>
+    </td>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <th scope="row"></th>
-    <td>
-      <span>{{id}}</span>
-      <span>{{departureCity}}</span>
-      <span>{{arrivalCity}}</span>
-      <span>{{departureDate}}</span>
-      <span>{{arrivalDate}}</span>
-      <span>{{time}}</span>
-      <span>{{price}}</span>
-      <span>{{flightClass}}</span>
+    <td class="col">
+      <img *ngIf="id === 0" src="../../../assets/img/Lufthansa_logo_1.png"/>
+      <img *ngIf="id === 2 || id === 3" src="../../../assets/img/screen1.jpg"/>
     </td>
-    <td></td>
-    <td>
-      <span></span>
-      <span></span>
-    </td>
+    <td class="col">{{departureCity}}</td>
+    <td class="col">{{arrivalCity}}</td>
+    <td class="col">{{departureDate}}</td>
+    <td class="col">{{arrivalDate}}</td>
+    <td class="col">{{time}}</td>
+    <td class="col">{{flightClass}}</td>
 
-    <td class="column-price" style="opacity: 0 !important;">
-      <span style="color: transparent;"></span>
-      <app-btn-primary [btnText]="'Znajdź podobne'"></app-btn-primary>
+    <td>
+      <span>{{price}} PLN</span>
+      <app-btn-primary [btnText]="'Rezerwuj'"></app-btn-primary>
     </td>
   </tr>
 
-  <tr class="row-down">
-    <th scope="row">Logo</th>
-    <td>
-      <span>BGY 30 maj</span>
-      <span>Lotnisko Mediolan Bergamo-Orio al Serio</span>
-    </td>
-    <td>2h 00min</td>
-    <td>
-      <span>WAW</span>
-      <span>Lotnisko Warszawa Lotnisko Chopina</span>
-    </td>
+  <!--<tr class="row-down">-->
+  <!--<th scope="row">Logo</th>-->
+  <!--<td>-->
+  <!--<span>BGY 30 maj</span>-->
+  <!--<span>Lotnisko Mediolan Bergamo-Orio al Serio</span>-->
+  <!--</td>-->
+  <!--<td>2h 00min</td>-->
+  <!--<td>-->
+  <!--<span>WAW</span>-->
+  <!--<span>Lotnisko Warszawa Lotnisko Chopina</span>-->
+  <!--</td>-->
 
-    <td class="column-price">
-      <span> PLN</span>
-      <app-btn-primary [btnText]="'Znajdź podobne'"></app-btn-primary>
-    </td>
-  </tr>
+  <!--<td class="column-price">-->
+  <!--<span> PLN</span>-->
+  <!--<app-btn-primary [btnText]="'Rezerwuj'"></app-btn-primary>-->
+  <!--</td>-->
+  <!--</tr>-->
 
   </tbody>
 </table>
+</div>

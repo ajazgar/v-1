@@ -22,3 +22,11 @@
   }
 
 }
+
+:host-context(.btn-none) {
+
+  .btn-primary {
+    background-color: #ffffff;
+    box-shadow: none;
+  }
+}
