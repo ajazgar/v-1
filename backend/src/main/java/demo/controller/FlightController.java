@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/loty")
+@RequestMapping("/flights")
 public class FlightController {
 
     @Autowired
     private FlightService flightService;
 
-    @GetMapping("flight/{flightId}")
+    @GetMapping(path="/{flightId}")
     public ResponseEntity<Flight> getFlightById(@PathVariable("flightId") Integer flightId) {
         Flight flight = flightService.getFlightById(flightId);
         return new ResponseEntity<Flight>(flight, HttpStatus.OK);
     }
 
-    @GetMapping("flights")
+    @GetMapping
     public ResponseEntity<List<Flight>> getAllFlights() {
         List<Flight> list = flightService.getAllFlights();
         return new ResponseEntity<List<Flight>>(list, HttpStatus.OK);

@@ -11,7 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ReservationComponent implements OnInit {
 
-  flights: Array<any>;
+  flights: Object;
   id: number;
 
   constructor(private resultTableService: ResultTableService, private route: ActivatedRoute) {
@@ -22,8 +22,9 @@ export class ReservationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.resultTableService.getFlightById().subscribe(data => {
-      this.flights = data;
+    this.resultTableService.getFlightById(this.id).subscribe(data => {
+      this.id = data.flightId;
+      console.log(this.id);
     });
 
 

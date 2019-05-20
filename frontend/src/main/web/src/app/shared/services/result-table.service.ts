@@ -1,23 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {Flight} from "../../models/flight.model";
+import {tap} from "rxjs/operators";
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class ResultTableService {
 
-  private flightUrl = 'http://localhost:8090/loty/flight/:id';
+  //private options = new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})});
+  private flightsUrl = 'http://localhost:8090/loty/flights';
+  baseUrl: string = 'http://localhost:8090/loty/flights/';
+
 
   constructor(private http: HttpClient) {}
 
 
+
   getFlight(): Observable<any> {
-    return this.http.get('http://localhost:8090/loty/flights');
+    return this.http.get('http://localhost:8090/flights');
   }
 
-  getFlightById(): Observable<any> {
-    return this.http.get('http://localhost:8090/loty/flight/:id');
+  getFlightById(flightId: number): Observable<any> {
+    return this.http.get('http://localhost:8090/flights/' + flightId);
   }
 
   // public getFlightById(): Observable<any> {

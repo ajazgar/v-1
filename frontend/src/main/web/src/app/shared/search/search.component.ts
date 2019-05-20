@@ -14,6 +14,8 @@ export class SearchComponent implements OnInit {
   disableButton: boolean = true;
 
 
+  // ActivatedRoute is a service, which keeps track of the currently activated route associated with the loaded Component.
+
   constructor(private resultTableService: ResultTableService, private el: ElementRef) { }
 
 
