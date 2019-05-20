@@ -13,6 +13,13 @@ export class ReservationComponent implements OnInit {
 
   flights: Object;
   id: number;
+  departureCity: string;
+  arrivalCity: string;
+  departureDate: string;
+  arrivalDate: string;
+  flightClass: string;
+  time: string;
+  price: number;
 
   constructor(private resultTableService: ResultTableService, private route: ActivatedRoute) {
     this.route.params.subscribe( params => {
@@ -24,7 +31,13 @@ export class ReservationComponent implements OnInit {
   ngOnInit() {
     this.resultTableService.getFlightById(this.id).subscribe(data => {
       this.id = data.flightId;
-      console.log(this.id);
+      this.departureCity = data.departureCity;
+      this.arrivalCity = data.arrivalCity;
+      this.departureDate = data.departureDate;
+      this.arrivalDate = data.arrivalDate;
+      this.flightClass = data.flightClass;
+      this.time = data.time;
+      this.price = data.price;
     });
 
 
