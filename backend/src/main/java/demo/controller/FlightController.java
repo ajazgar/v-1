@@ -20,9 +20,9 @@ public class FlightController {
     @Autowired
     private FlightService flightService;
 
-    @GetMapping("flight/{id}")
-    public ResponseEntity<Flight> getFlightById(@PathVariable("id") Integer id) {
-        Flight flight = flightService.getFlightById(id);
+    @GetMapping("flight/{flightId}")
+    public ResponseEntity<Flight> getFlightById(@PathVariable("flightId") Integer flightId) {
+        Flight flight = flightService.getFlightById(flightId);
         return new ResponseEntity<Flight>(flight, HttpStatus.OK);
     }
 

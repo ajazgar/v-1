@@ -20,7 +20,7 @@ public class FlightRowMapper implements RowMapper<Flight> {
         flight.setArrivalDate(row.getString("arrivalDate"));
         flight.setFlightClass(row.getString("flightClass"));
         flight.setTime(row.getString("time"));
-        flight.setPrice(row.getFloat("price"));
+        flight.setPrice(row.getDouble("price"));
 
         return flight;
     }

@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit {
 
   flights: Array<any>;
   isFlightChosen: number;
+  disableButton: boolean = true;
 
 
   constructor(private resultTableService: ResultTableService, private el: ElementRef) { }
@@ -25,6 +26,7 @@ export class SearchComponent implements OnInit {
 
   chooseFlight(index) {
     this.isFlightChosen = index;
+    this.disableButton = false;
   }
 
 

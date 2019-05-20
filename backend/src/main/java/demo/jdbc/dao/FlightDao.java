@@ -24,10 +24,11 @@ public class FlightDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Flight getFlightById(int id) {
+    public Flight getFlightById(int flightId) {
         String sql = "SELECT id, departureCity, arrivalCity, departureDate, arrivalDate, flightClass, time, price FROM flight WHERE id = ?";
-        RowMapper<Flight> rowMapper = new BeanPropertyRowMapper<Flight>(Flight.class);
-        Flight flight = jdbcTemplate.queryForObject(sql, rowMapper, id);
+//        RowMapper<Flight> rowMapper = new BeanPropertyRowMapper<Flight>(Flight.class);
+        RowMapper<Flight> rowMapper = new FlightRowMapper();
+        Flight flight = jdbcTemplate.queryForObject(sql, rowMapper, flightId);
         return flight;
     }
 

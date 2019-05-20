@@ -14,7 +14,7 @@ const routes: Routes = [
     {path: 'samochody', component: CarsComponent},
     {path: 'discover', component: DiscoverComponent},
     {path: 'loty/recommended', component: ResultTableComponent},
-    {path: 'loty/rezerwacja', component: ReservationComponent}
+    {path: 'loty/rezerwacja/:id', component: ReservationComponent}
 ];
 
 @NgModule({

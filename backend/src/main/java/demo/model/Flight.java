@@ -6,21 +6,21 @@ package demo.model;
 
 public class Flight {
 
-    private int id;
+    private int flightId;
     private String departureCity;
     private String arrivalCity;
     private String departureDate;
     private String arrivalDate;
     private String flightClass;
     private String time;
-    private float price;
+    private double price;
 
     public int getFlightId() {
-        return id;
+        return flightId;
     }
 
     public void setFlightId(int id) {
-        this.id = id;
+        this.flightId = id;
     }
 
     public String getDepartureCity() {
@@ -63,7 +63,7 @@ public class Flight {
 
     public void setTime(String time) { this.time = time; }
 
-    public float getPrice() { return price; }
+    public double getPrice() { return price; }
 
-    public void setPrice(float price) { this.price = price; }
+    public void setPrice(double price) { this.price = price; }
 }

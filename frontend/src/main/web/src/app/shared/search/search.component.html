@@ -2,7 +2,7 @@
   <div class="header-text">Wybierz lot</div>
 </div>
 
-<div class="search">
+<div class="search" *ngFor="let flight of flights; let i = index">
   <div class="search-container">
 
       <table class="table table-hover">
@@ -16,9 +16,9 @@
           <th scope="col">Czas lotu</th>
           <th scope="col">Cena (PLN)</th>
         </thead>
-        <tbody *ngFor="let flight of flights; let i = index" (click)="chooseFlight(i)">
+        <tbody (click)="chooseFlight(i)">
           <tr [ngClass]="{'active': isFlightChosen === i}">
-            <td>{{flight.id}}</td>
+            <td>{{flight.flightId}}</td>
             <td>{{flight.departureCity}}</td>
             <td>{{flight.arrivalCity}}</td>
             <td>{{flight.departureDate}}</td>
@@ -27,11 +27,12 @@
             <td>{{flight.time}}</td>
             <td>{{flight.price}}</td>
           </tr>
+
         </tbody>
 
       </table>
+    <app-btn-primary [isBtnDisabled]="disableButton" [btnText]="'Zarezerwuj' "style="margin: 0 3px" [routerLink]="['/loty/rezerwacja', flight.flightId]" ></app-btn-primary>
 
-    <app-btn-primary [btnText]="'Zarezerwuj' "style="margin: 0 3px" routerLink="/loty/rezerwacja" ></app-btn-primary>
   </div>
 
 </div>

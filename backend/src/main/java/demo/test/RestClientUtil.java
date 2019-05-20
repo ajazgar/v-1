@@ -13,7 +13,7 @@ public class RestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8090/user/flight/1";
+        String url = "http://localhost:8090/loty/flight/{flightId}";
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
         ResponseEntity<Flight> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Flight.class, 1);
         Flight flight = responseEntity.getBody();
@@ -25,7 +25,7 @@ public class RestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8090/user/flights";
+        String url = "http://localhost:8090/loty/flights";
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
         ResponseEntity<Flight[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Flight[].class);
         Flight[] flights = responseEntity.getBody();

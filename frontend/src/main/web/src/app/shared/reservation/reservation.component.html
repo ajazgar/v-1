@@ -5,10 +5,10 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
+  <tr *ngFor="let chosenFlight of flights">
     <th scope="row"></th>
     <td>
-      <span></span>
+      <span>{{chosenFlight?.departureCity}}</span>
       <span></span>
     </td>
     <td></td>
