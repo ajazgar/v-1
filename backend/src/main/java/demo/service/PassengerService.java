@@ -11,7 +11,8 @@ public class PassengerService {
     @Autowired
     PassengerDao passengerDao;
 
-    public void addPassenger(Passenger passenger) {
+    public boolean addPassenger(Passenger passenger) {
         passengerDao.addPassenger(passenger);
+        return true;
     }
 }

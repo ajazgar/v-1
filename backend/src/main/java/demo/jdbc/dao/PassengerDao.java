@@ -26,7 +26,8 @@ public class PassengerDao {
 
     public Passenger getPassengerById(int passengerId) {
         String sql = "SELECT id, name, surname, email, discount FROM passenger WHERE id = ?";
-        RowMapper<Passenger> rowMapper = new BeanPropertyRowMapper<Passenger>(Passenger.class);
+//        RowMapper<Passenger> rowMapper = new BeanPropertyRowMapper<Passenger>(Passenger.class);
+        RowMapper<Passenger> rowMapper = new PassengerRowMapper();
         Passenger passenger = jdbcTemplate.queryForObject(sql, rowMapper, passengerId);
         return passenger;
     }

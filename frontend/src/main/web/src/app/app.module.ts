@@ -23,6 +23,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {BsDropdownModule, ModalModule, TooltipModule} from "ngx-bootstrap";
 import { ReservationComponent } from './shared/reservation/reservation.component';
 import { BookingComponent } from './pages/booking/booking.component';
+import { ConfirmationComponent } from './shared/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { BookingComponent } from './pages/booking/booking.component';
     FlightsComponent,
     DiscoverComponent,
     ReservationComponent,
-    BookingComponent
+    BookingComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

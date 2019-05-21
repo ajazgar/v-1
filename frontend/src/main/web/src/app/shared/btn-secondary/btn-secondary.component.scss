@@ -31,3 +31,10 @@
     }
   }
 }
+
+:host-context(.btn-confirmation) {
+
+  .btn-text {
+    color: #000000 !important;
+  }
+}
