@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  padding: 0 140px;
+  flex-direction: column;
+  margin-top: 96px;
+
+  .article {
+
+    &__wrapper {
+      display: flex;
+      background-color: #ffffff;
+      border-radius: 8px;
+      flex-direction: column;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      padding: 24px;
+
+      h1, h3 {
+        color: #000000;
+        align-self: center;
+      }
+
+      h3 {
+        width: 50%;
+        margin-top: 24px;
+        font-weight: normal;
+        margin-bottom: 36px;
+      }
+
+      h4, h5 {
+        width: 50%;
+        align-self: center;
+      }
+    }
+  }
+}

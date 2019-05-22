@@ -8,6 +8,7 @@ import {ResultTableComponent} from './shared/result-table/result-table.component
 import {ReservationComponent} from "./shared/reservation/reservation.component";
 import {BookingComponent} from "./pages/booking/booking.component";
 import {ConfirmationComponent} from "./shared/confirmation/confirmation.component";
+import {ArticleComponent} from "./pages/article/article.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/loty', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
     {path: 'loty/recommended', component: ResultTableComponent},
     {path: 'loty/rezerwacja/:id', component: ReservationComponent},
     {path: 'loty/booking/:id', component: BookingComponent},
-    {path: 'loty/booking/confirmation/:id', component: ConfirmationComponent}
+    {path: 'loty/booking/confirmation/:id', component: ConfirmationComponent},
+    {path: 'artykul/10-kawiarni-w-amsterdamie', component: ArticleComponent}
 ];
 
 @NgModule({

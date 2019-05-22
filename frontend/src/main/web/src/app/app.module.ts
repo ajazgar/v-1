@@ -24,6 +24,7 @@ import {BsDropdownModule, ModalModule, TooltipModule} from "ngx-bootstrap";
 import { ReservationComponent } from './shared/reservation/reservation.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { ConfirmationComponent } from './shared/confirmation/confirmation.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ConfirmationComponent } from './shared/confirmation/confirmation.compon
     DiscoverComponent,
     ReservationComponent,
     BookingComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

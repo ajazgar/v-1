@@ -28,10 +28,9 @@ INSERT INTO flight VALUES(2, 'Nicea', 'Warszawa', '2019-06-14 05:35', '2019-06-1
 INSERT INTO flight VALUES(3, 'Madryt', 'Rzym', '2019-07-12 14:00', '2019-07-12 15:30', 'business', '1h 30min', 241);
 
 INSERT INTO flight VALUES(4, 'Berlin', 'Warszawa', '2019-06-30 09:20', '2019-06-30 10:50', 'ekonomiczna', '1h 30min', 86);
-INSERT INTO flight VALUES(5, 'Moskwa', 'Tokio', '2019-10-22 04:30', '2019-10-22 16:30', 'business', '12h', 2950);
-INSERT INTO flight VALUES(6, 'Warszawa', 'Nicea', '2019-06-19 18:00', '2019-06-19 20:35', 'ekonomiczna', '2h 35min', 398);
-INSERT INTO flight VALUES(7, 'Rzym', 'Madryt', '2019-07-29 12:00', '2019-07-29 13:30', 'business', '1h 30min', 192);
+INSERT INTO flight VALUES(5, 'Warszawa', 'Nowy Jork', '2019-07-12 06:55', '2019-07-12 19:55', 'ekonomiczna', '13h', 1895);
+INSERT INTO flight VALUES(6, 'Katowice', 'Barcelona', '2019-06-19 13:00', '2019-06-19 16:00', 'ekonomiczna', '3h', 420);
+INSERT INTO flight VALUES(7, 'Warszawa', 'Sydney', '2019-08-14 03:00', '2019-08-14 19:00', 'business', '16h', 3249);
 
 INSERT INTO passenger VALUES(1, 'Kamil', 'Nowak', 'www@gmail.com', true);
 INSERT INTO passenger VALUES(2, 'Karolina', 'Kowalska', 'qwert@.gmail.com', false);
-
