@@ -34,15 +34,15 @@ public class PassengerDao {
 
     public List<Passenger> getAllPassengers() {
         String sql = "SELECT id, passengerName, surname, email, discount FROM passenger";
-        RowMapper<Passenger> rowMapper = new BeanPropertyRowMapper<Passenger>(Passenger.class);
-//        RowMapper<Passenger> rowMapper = new PassengerRowMapper();
+//        RowMapper<Passenger> rowMapper = new BeanPropertyRowMapper<Passenger>(Passenger.class);
+        RowMapper<Passenger> rowMapper = new PassengerRowMapper();
         return this.jdbcTemplate.query(sql, rowMapper);
     }
 
     public void addPassenger(Passenger passenger) {
-        String sql = "INSERT INTO passenger VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO passenger VALUES (?, ?, ?, ?, ?)";
 
-        jdbcTemplate.update(sql, passenger.getPassengerId(), passenger.getName(), passenger.getSurname(), passenger.getEmail());
+        jdbcTemplate.update(sql, passenger.getPassengerId(), passenger.getName(), passenger.getSurname(), passenger.getEmail(), passenger.getDiscount());
 
         sql = "SELECT id FROM passenger WHERE passengerName = ? and surname = ?";
         int id = jdbcTemplate.queryForObject(sql, Integer.class, passenger.getName(), passenger.getSurname());
