@@ -35,11 +35,25 @@ public class RestClientUtil {
         }
     }
 
+    public void getAllPassengersDemo() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8090/loty/passengers";
+        HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
+        ResponseEntity<Passenger[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Passenger[].class);
+        Passenger[] passengers = responseEntity.getBody();
+//        for(Passenger passenger : passengers) {
+//            System.out.println("Id:"+passenger.getPassengerId()+", Name:"+passenger.getName()+", Surname:"+passenger.getSurname()+", Email: "+passenger.getEmail()+
+//                    ", Discount: "+passenger.getDiscount());
+//        }
+    }
+
     public void addPassengerDemo() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8090/user/passenger";
+        String url = "http://localhost:8090/passengers/add-passenger";
         Passenger objPassenger = new Passenger();
         objPassenger.setName("Spring REST Security using Hibernate");
         objPassenger.setSurname("Spring");
@@ -50,6 +64,7 @@ public class RestClientUtil {
 
     public static void main(String args[]) {
         RestClientUtil util = new RestClientUtil();
+        util.getAllPassengersDemo();
         util.addPassengerDemo();
         util.getFlightByIdDemo();
         util.getAllFlightsDemo();

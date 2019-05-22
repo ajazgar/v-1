@@ -3,7 +3,7 @@ package demo.model;
 public class Passenger {
 
     private int id;
-    private String name;
+    private String passengerName;
     private String surname;
     private String email;
     private boolean discount;
@@ -17,11 +17,11 @@ public class Passenger {
     }
 
     public String getName() {
-        return name;
+        return passengerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String passengerName) {
+        this.passengerName = passengerName;
     }
 
     public String getSurname() {

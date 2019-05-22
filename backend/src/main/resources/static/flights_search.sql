@@ -8,14 +8,14 @@ CREATE TABLE flight(id INT NOT NULL,
                     price DOUBLE,
                     PRIMARY KEY (id))ENGINE=InnoDB;
 
-CREATE TABLE passenger(id INT NOT NULL AUTO_INCREMENT,
-					             name VARCHAR(255),
+CREATE TABLE passenger(id INT NOT NULL,
+					             passengerName VARCHAR(255),
                        surname VARCHAR(255),
                        email VARCHAR(255),
                        discount BOOLEAN,
                        PRIMARY KEY(id))ENGINE=InnoDB;
 
-CREATE TABLE bookings(id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE bookings(id INT NOT NULL,
 					            passenger INT,
                       flight INT,
                       PRIMARY KEY(id),
@@ -31,3 +31,7 @@ INSERT INTO flight VALUES(4, 'Berlin', 'Warszawa', '2019-06-30 09:20', '2019-06-
 INSERT INTO flight VALUES(5, 'Moskwa', 'Tokio', '2019-10-22 04:30', '2019-10-22 16:30', 'business', '12h', 2950);
 INSERT INTO flight VALUES(6, 'Warszawa', 'Nicea', '2019-06-19 18:00', '2019-06-19 20:35', 'ekonomiczna', '2h 35min', 398);
 INSERT INTO flight VALUES(7, 'Rzym', 'Madryt', '2019-07-29 12:00', '2019-07-29 13:30', 'business', '1h 30min', 192);
+
+INSERT INTO passenger VALUES(1, 'Kamil', 'Nowak', 'www@gmail.com', true);
+INSERT INTO passenger VALUES(2, 'Karolina', 'Kowalska', 'qwert@.gmail.com', false);
+

@@ -25,7 +25,7 @@ public class PassengerDao {
     }
 
     public Passenger getPassengerById(int passengerId) {
-        String sql = "SELECT id, name, surname, email, discount FROM passenger WHERE id = ?";
+        String sql = "SELECT id, passengerName, surname, email, discount FROM passenger WHERE id = ?";
 //        RowMapper<Passenger> rowMapper = new BeanPropertyRowMapper<Passenger>(Passenger.class);
         RowMapper<Passenger> rowMapper = new PassengerRowMapper();
         Passenger passenger = jdbcTemplate.queryForObject(sql, rowMapper, passengerId);
@@ -33,9 +33,9 @@ public class PassengerDao {
     }
 
     public List<Passenger> getAllPassengers() {
-        String sql = "SELECT id, name, surname, email FROM flight";
-        //RowMapper<Article> rowMapper = new BeanPropertyRowMapper<Article>(Article.class);
-        RowMapper<Passenger> rowMapper = new PassengerRowMapper();
+        String sql = "SELECT id, passengerName, surname, email, discount FROM passenger";
+        RowMapper<Passenger> rowMapper = new BeanPropertyRowMapper<Passenger>(Passenger.class);
+//        RowMapper<Passenger> rowMapper = new PassengerRowMapper();
         return this.jdbcTemplate.query(sql, rowMapper);
     }
 
@@ -44,7 +44,7 @@ public class PassengerDao {
 
         jdbcTemplate.update(sql, passenger.getPassengerId(), passenger.getName(), passenger.getSurname(), passenger.getEmail());
 
-        sql = "SELECT id FROM passenger WHERE name = ? and surname = ?";
+        sql = "SELECT id FROM passenger WHERE passengerName = ? and surname = ?";
         int id = jdbcTemplate.queryForObject(sql, Integer.class, passenger.getName(), passenger.getSurname());
 
         passenger.setPassengerId(id);
