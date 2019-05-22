@@ -17,8 +17,8 @@ const routes: Routes = [
     {path: 'discover', component: DiscoverComponent},
     {path: 'loty/recommended', component: ResultTableComponent},
     {path: 'loty/rezerwacja/:id', component: ReservationComponent},
-    {path: 'loty/booking', component: BookingComponent},
-    {path: 'loty/booking/confirmation', component: ConfirmationComponent}
+    {path: 'loty/booking/:id', component: BookingComponent},
+    {path: 'loty/booking/confirmation/:id', component: ConfirmationComponent}
 ];
 
 @NgModule({

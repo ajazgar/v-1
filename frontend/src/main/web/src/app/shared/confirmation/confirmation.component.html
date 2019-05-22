@@ -6,10 +6,11 @@
   </div>
 
   <h4 class="confirmation__secondary-text">Informacje dotyczące Twojego lotu</h4>
-  <h6>Departure City - Arrival City</h6>
-  <h6>Data</h6>
-  <h6>Pasażer: </h6>
-  <h6 style="margin-bottom: 24px">Klasa podróży</h6>
+  <h6>{{departureCity}} - {{arrivalCity}}</h6>
+  <h6>Wylot: {{departureDate}} </h6>
+  <h6>Przylot: {{arrivalDate}}</h6>
+  <h6>{{price}} PLN</h6>
+  <h6 style="margin-bottom: 24px">Klasa podróży: {{flightClass}}</h6>
   <h6 style="color: #7f7f7f;">Potwierdzenie rezerwacji zostanie przesłane na Twojego maila.</h6>
 
   <app-btn-secondary class="btn-confirmation" [buttonSecondaryText]="'Wróć na stronę główną'" [routerLink]="['/loty']"></app-btn-secondary>

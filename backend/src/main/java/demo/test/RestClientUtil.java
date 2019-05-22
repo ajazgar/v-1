@@ -43,17 +43,17 @@ public class RestClientUtil {
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
         ResponseEntity<Passenger[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Passenger[].class);
         Passenger[] passengers = responseEntity.getBody();
-//        for(Passenger passenger : passengers) {
-//            System.out.println("Id:"+passenger.getPassengerId()+", Name:"+passenger.getName()+", Surname:"+passenger.getSurname()+", Email: "+passenger.getEmail()+
-//                    ", Discount: "+passenger.getDiscount());
-//        }
+        for(Passenger passenger : passengers) {
+            System.out.println("Id:"+passenger.getPassengerId()+", Name:"+passenger.getName()+", Surname:"+passenger.getSurname()+", Email: "+passenger.getEmail()+
+                    ", Discount: "+passenger.getDiscount());
+        }
     }
 
     public void addPassengerDemo() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8090/passengers/add-passenger";
+        String url = "http://localhost:8090/passengers/{id}";
         Passenger objPassenger = new Passenger();
         objPassenger.setName("Spring REST Security using Hibernate");
         objPassenger.setSurname("Spring");

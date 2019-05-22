@@ -1,23 +1,23 @@
 <form>
   <div class="form-group">
-    <label for="exampleInputName">Name</label>
-    <input [(ngModel)]="passenger.passengerName" name="something" type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter your name">
+    <label for="exampleInputName">Imię</label>
+    <input [(ngModel)]="passenger.passengerName" name="something" type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Podaj swoje imię">
     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
   </div>
   <div class="form-group">
-    <label for="exampleInputSurname">Surname</label>
-    <input [(ngModel)]="passenger.surname" name="something" type="text" class="form-control" id="exampleInputSurname" placeholder="Enter your surname">
+    <label for="exampleInputSurname">Nazwisko</label>
+    <input [(ngModel)]="passenger.surname" name="something" type="text" class="form-control" id="exampleInputSurname" placeholder="Podaj swoje nazwisko">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail">Email</label>
-    <input [(ngModel)]="passenger.email" name="mail" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your email">
+    <input [(ngModel)]="passenger.email" name="mail" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Podaj swój email">
     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
   </div>
   <div class="form-group form-check">
     <input [(ngModel)]="passenger.discount" name="discount" type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Student discount</label>
+    <label class="form-check-label" for="exampleCheck1">Zniżka studencka</label>
   </div>
-  <app-btn-primary (click)="createPassenger()" class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/loty/booking/confirmation']" ></app-btn-primary>
+  <app-btn-primary (click)="createPassenger()" class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/loty/booking/confirmation/', id]" ></app-btn-primary>
 </form>
 
 <!--<app-footer></app-footer>-->
