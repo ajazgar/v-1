@@ -17,24 +17,24 @@
       <span *ngIf="inspiration">Czytaj więcej</span>
     </div>
 
-    <a routerLink="/loty/recommended"><img *ngIf="city" src="../../../assets/img/chelsea-london-phillips-779135-unsplash.png"/></a>
+    <a routerLink="/loty/rezerwacja/5"><img *ngIf="city" src="../../../assets/img/chelsea-london-phillips-779135-unsplash.png"/></a>
     <a routerLink="/loty/recommended"><img *ngIf="country" src="../../../assets/img/manuel-cosentino-691602-unsplash.png"/></a>
-    <a routerLink="/loty/recommended"><img *ngIf="inspiration" src="../../../assets/img/sydney-rae-421261-unsplash.png"/></a>
+    <a routerLink="/artykul/dia-de-muertos"><img *ngIf="inspiration" src="../../../assets/img/sydney-rae-421261-unsplash.png"/></a>
   </div>
   <div class="row-square col-md-4">
 
     <div class="row-square__description">
       <span *ngIf="city">Barcelona</span>
       <span *ngIf="country">Wielka Brytania</span>
-      <span *ngIf="inspiration">Top 10 kawiarni w Amsterdamie</span>
+      <span *ngIf="inspiration">Top 5 kawiarni w Amsterdamie</span>
       <div class="line"></div>
       <span *ngIf="city || country">Sprawdź ceny</span>
       <span *ngIf="inspiration">Czytaj więcej</span>
     </div>
 
-    <a routerLink="/artykul/5-kawiarni-w-amsterdamie"><img *ngIf="city" src="../../../assets/img/danil-sorokin-455017-unsplash.png"/></a>
+    <a routerLink="rezerwacja/6"><img *ngIf="city" src="../../../assets/img/danil-sorokin-455017-unsplash.png"/></a>
     <img *ngIf="country" src="../../../assets/img/aron-van-de-pol-218042-unsplash.png"/>
-    <img *ngIf="inspiration" src="../../../assets/img/nick-hillier-254650-unsplash.png"/>
+    <a routerLink="/artykul/5-kawiarni-w-amsterdamie"><img *ngIf="inspiration" src="../../../assets/img/nick-hillier-254650-unsplash.png"/></a>
   </div>
   <div class="row-square col-md-4">
 
@@ -47,9 +47,9 @@
       <span *ngIf="inspiration">Czytaj więcej</span>
     </div>
 
-    <img *ngIf="city" src="../../../assets/img/tyler-duston-690171-unsplash.png"/>
+    <a routerLink="rezerwacja/7"><img *ngIf="city" src="../../../assets/img/tyler-duston-690171-unsplash.png"/></a>
     <img *ngIf="country" src="../../../assets/img/evelyn-paris-100375-unsplash.png"/>
-    <img *ngIf="inspiration" src="../../../assets/img/adam-jang-311043-unsplash.png"/>
+    <a routerLink="/artykul/lodowce-islandia"><img *ngIf="inspiration" src="../../../assets/img/adam-jang-311043-unsplash.png"/></a>
   </div>
 </div>
 <router-outlet></router-outlet>
