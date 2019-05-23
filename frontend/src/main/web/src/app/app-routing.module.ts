@@ -20,7 +20,7 @@ const routes: Routes = [
     {path: 'loty/rezerwacja/:id', component: ReservationComponent},
     {path: 'loty/booking/:id', component: BookingComponent},
     {path: 'loty/booking/confirmation/:id', component: ConfirmationComponent},
-    {path: 'artykul/10-kawiarni-w-amsterdamie', component: ArticleComponent}
+    {path: 'artykul/5-kawiarni-w-amsterdamie', component: ArticleComponent}
 ];
 
 @NgModule({

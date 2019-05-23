@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  amsterdamHeader = 'Top 10 kawiarni w Amsterdamie';
+  amsterdamHeader = 'Top 5 kawiarni w Amsterdamie';
   amsterdamSec = 'Amsterdamskie kawiarnie to dużo więcej niż tylko smaczna kawa. ' +
     'To także porządna dawka holenderskiej kultury i sposobu życia. Od tradycyjnych Koffiehuis po przytulne ' +
     '"brązowe kafejki" - tutaj znajdziesz odpowiednie miejsce od napicia się kawy na każdą okazję. Sprawdź gdzie ' +

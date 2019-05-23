@@ -13,6 +13,7 @@
       flex-direction: column;
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
       padding: 24px;
+      margin-bottom: 24px;
 
       h1, h3 {
         color: #000000;
@@ -26,9 +27,22 @@
         margin-bottom: 36px;
       }
 
-      h4, h5 {
+      h4, h5, h6 {
         width: 50%;
         align-self: center;
+      }
+
+      h4 {
+        margin-top: 24px;
+      }
+
+
+      img {
+        width: 40%;
+        align-self: center;
+        margin: 24px 0;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        border-radius: 8px;
       }
     }
   }
