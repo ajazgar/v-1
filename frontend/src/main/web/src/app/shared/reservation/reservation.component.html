@@ -17,8 +17,10 @@
   <tbody>
   <tr>
     <td class="col">
-      <img *ngIf="id === 0" src="../../../assets/img/Lufthansa_logo_1.png"/>
-      <img *ngIf="id === 2 || id === 3" src="../../../assets/img/screen1.jpg"/>
+      <img *ngIf="id === 0 || id === 4" src="../../../assets/img/Lufthansa_logo_1.png"/>
+      <img *ngIf="id === 1" src="../../../assets/img/Aeroflot_1932.png"/>
+      <img *ngIf="id === 2 || id === 3 || id === 6" src="../../../assets/img/screen1.jpg"/>
+      <img *ngIf="id === 5 || id == 7" src="../../../assets/img/lot.png"/>
     </td>
     <td class="col">{{departureCity}}</td>
     <td class="col">{{arrivalCity}}</td>
@@ -32,24 +34,6 @@
       <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/loty/booking/', id]" ></app-btn-primary>
     </td>
   </tr>
-
-  <!--<tr class="row-down">-->
-  <!--<th scope="row">Logo</th>-->
-  <!--<td>-->
-  <!--<span>BGY 30 maj</span>-->
-  <!--<span>Lotnisko Mediolan Bergamo-Orio al Serio</span>-->
-  <!--</td>-->
-  <!--<td>2h 00min</td>-->
-  <!--<td>-->
-  <!--<span>WAW</span>-->
-  <!--<span>Lotnisko Warszawa Lotnisko Chopina</span>-->
-  <!--</td>-->
-
-  <!--<td class="column-price">-->
-  <!--<span> PLN</span>-->
-  <!--<app-btn-primary [btnText]="'Rezerwuj'"></app-btn-primary>-->
-  <!--</td>-->
-  <!--</tr>-->
 
   </tbody>
 </table>
