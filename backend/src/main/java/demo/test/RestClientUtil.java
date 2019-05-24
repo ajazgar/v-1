@@ -1,6 +1,7 @@
 package demo.test;
 
 import demo.model.Flight;
+import demo.model.Hotel;
 import demo.model.Passenger;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
@@ -62,11 +63,40 @@ public class RestClientUtil {
         System.out.println(uri.getPath());
     }
 
+
+    public void getAllHotelsDemo() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8090/hotels";
+        HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
+        ResponseEntity<Hotel[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Hotel[].class);
+        Hotel[] hotels = responseEntity.getBody();
+        for(Hotel hotel : hotels) {
+            System.out.println("Id:"+hotel.getHotelId()+", Name:"+hotel.getHotelName()+", City:"+hotel.getCity()+", First Date:"+hotel.getFirstDate()+
+                    ", Sec Date:"+hotel.getSecDate()+", Time:"+hotel.getTime()+", Price:"+hotel.getPrice());
+        }
+    }
+
+    public void getHotelByCityDemo() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8090/hotels/{city}";
+        HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
+        ResponseEntity<Hotel> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Hotel.class, 1);
+        Hotel hotel = responseEntity.getBody();
+        System.out.println("Id:"+hotel.getHotelId()+", Name:"+hotel.getHotelName()+", City:"+hotel.getCity()+", First Date:"+hotel.getFirstDate()+
+                ", Sec Date:"+hotel.getSecDate()+", Time:"+hotel.getTime()+", Price:"+hotel.getPrice());
+    }
+
     public static void main(String args[]) {
         RestClientUtil util = new RestClientUtil();
         util.getAllPassengersDemo();
         util.addPassengerDemo();
         util.getFlightByIdDemo();
         util.getAllFlightsDemo();
+        util.getAllHotelsDemo();
+        util.getHotelByCityDemo();
     }
 }
