@@ -1,6 +1,20 @@
-<app-search></app-search>
-<app-recommendations [city]="'Popularne miasta'"></app-recommendations>
-<app-recommendations [country]="'Popularne kraje'"></app-recommendations>
+<!-- Search Field -->
+<div>
+  <div class="filter-wrap">
+    <input [(ngModel)]="searchText" placeholder="Szukaj miasta" class="filter-input">
+    <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
+  </div>
+</div>
+
+<table class="table table-borderless">
+  <tbody>
+    <tr *ngFor="let hotel of filteredHotels">
+      <td>{{hotel.hotelName}}</td>
+      <td>{{hotel.city}}</td>
+    </tr>
+  </tbody>
+</table>
+
 <app-recommendations [inspiration]="'Inspiracje podróżnicze'"></app-recommendations>
 <app-btn-secondary [buttonSecondaryText]="'Więcej informacji'"></app-btn-secondary>
 <app-reviews></app-reviews>

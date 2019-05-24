@@ -24,6 +24,7 @@ import { ReservationComponent } from './shared/reservation/reservation.component
 import { BookingComponent } from './pages/booking/booking.component';
 import { ConfirmationComponent } from './shared/confirmation/confirmation.component';
 import { ArticleComponent } from './pages/article/article.component';
+import {FilterPipe} from "./shared/filter.pipe";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ArticleComponent } from './pages/article/article.component';
     ReservationComponent,
     BookingComponent,
     ConfirmationComponent,
-    ArticleComponent
+    ArticleComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
