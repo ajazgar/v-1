@@ -23,6 +23,8 @@ export class BookingComponent implements OnInit {
   price: number;
   id: number;
 
+  public contentEditable = false;
+
   constructor(private route: ActivatedRoute, private bookingService: BookingService, private resultsService: ResultTableService) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
@@ -42,9 +44,15 @@ export class BookingComponent implements OnInit {
     });
   }
 
-  createPassenger(): void {
-    this.bookingService.createPassanger(this.passenger).subscribe( data => {
-        alert('Passenger created successfully.');
-    });
+  toggleEditable(event) {
+    if ( event.target.checked ) {
+      this.contentEditable = true;
+    }
   }
+
+  // createPassenger(): void {
+  //   this.bookingService.createPassanger(this.passenger).subscribe( data => {
+  //       alert('Passenger created successfully.');
+  //   });
+  // }
 }

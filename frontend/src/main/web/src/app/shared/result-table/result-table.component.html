@@ -1,45 +1,40 @@
-<table class="table table-borderless" *ngFor="let b of flights">
-  <thead>
-  <tr>
-    <th scope="col">Nazwa linii</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row" *ngIf="b.departureCity === 'Berlin'"><img src="../../../assets/img/screen1.jpg"/></th>
-    <td>
-      <span>{{b.departureCity}}</span>
-      <span>{{b.departureDate}}</span>
-    </td>
-    <td>{{b.time}}</td>
-    <td>
-      <span>{{b.arrivalCity}}</span>
-      <span>{{b.arrivalTime}}</span>
-    </td>
+<div class="table-responsive" *ngFor="let count of flights; let i = index">
+  <table class="table table-borderless">
+    <thead>
+    <tr>
+      <th class="col">Nazwa linii</th>
+      <th class="col">Wylot</th>
+      <th class="col">Przylot</th>
+      <th class="col">Data wylotu</th>
+      <th class="col">Data przylotu</th>
+      <th class="col">Czas lotu</th>
+      <th class="col">Klasa lotu</th>
+      <td class="col">
+        <app-btn-primary class="btn-none" [btnText]="'Rezerwuj'"></app-btn-primary>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="col">
+        <img *ngIf="count.flightId === 0 || count.flightId === 4 || count.flightId === 10" src="../../../assets/img/Lufthansa_logo_1.png"/>
+        <img *ngIf="count.flightId === 1 || count.flightId === 8" src="../../../assets/img/Aeroflot_1932.png"/>
+        <img *ngIf="count.flightId === 2 || count.flightId === 3 || count.flightId === 6 || count.flightId === 9 || count.flightId === 11 || count.flightId === 12" src="../../../assets/img/screen1.jpg"/>
+        <img *ngIf="count.flightId === 5 || count.flightId == 7" src="../../../assets/img/lot.png"/>
+      </td>
+      <td class="col">{{count.departureCity}}</td>
+      <td class="col">{{count.arrivalCity}}</td>
+      <td class="col">{{count.departureDate}}</td>
+      <td class="col">{{count.arrivalDate}}</td>
+      <td class="col">{{count.time}}</td>
+      <td class="col">{{count.flightClass}}</td>
 
-    <td class="column-price" style="opacity: 0 !important;">
-      <span style="color: transparent;"></span>
-      <app-btn-primary [btnText]="'Znajdź podobne'"></app-btn-primary>
-    </td>
-  </tr>
+      <td>
+        <span>{{count.price}} PLN</span>
+        <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/loty/booking/', count.flightId]" ></app-btn-primary>
+      </td>
+    </tr>
 
-  <tr class="row-down">
-    <th scope="row">Logo</th>
-    <td>
-      <span>BGY 30 maj</span>
-      <span>Lotnisko Mediolan Bergamo-Orio al Serio</span>
-    </td>
-    <td>2h 00min</td>
-    <td>
-      <span>WAW</span>
-      <span>Lotnisko Warszawa Lotnisko Chopina</span>
-    </td>
-
-    <td class="column-price">
-      <span>{{b.price}} PLN</span>
-      <app-btn-primary [btnText]="'Znajdź podobne'"></app-btn-primary>
-    </td>
-  </tr>
-
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

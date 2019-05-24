@@ -19,6 +19,8 @@ export class ConfirmationComponent implements OnInit {
   time: string;
   price: number;
 
+  discountPrice: string;
+
   constructor(private resultsService: ResultTableService, private route: ActivatedRoute) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
@@ -36,6 +38,12 @@ export class ConfirmationComponent implements OnInit {
       this.time = data.time;
       this.price = data.price;
     });
+    this.calculateDiscount();
+  }
+
+  calculateDiscount() {
+    this.discountPrice = Math.floor(this.price/100 * 20).toFixed(2);
+    console.log(this.discountPrice);
   }
 
 }

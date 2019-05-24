@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-recommendations',
@@ -11,15 +12,31 @@ export class RecommendationsComponent implements OnInit {
   @Input() country: string;
   @Input() inspiration: string;
 
-  recommendedCities:  Array<object> = [
-    { name: 'Nowy Jork'},
-    { name: 'Barcelona'},
-    { name: 'Sydney'},
+  countries = [
+    {country: 'japonia'},
+    {country: 'uk'},
+    {country: 'islandia'}
   ];
 
-  constructor() { }
+
+  id: number;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.route.params.subscribe( params => {
+      this.countries = params['countries'];
+      this.id = params['id'];
+    });
+  }
 
   ngOnInit() {
+  }
+
+  navigateToJapan() {
+    this.router.navigate(['/loty/recommended/japonia/1/8']);
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 
 }

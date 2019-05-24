@@ -16,7 +16,7 @@ const routes: Routes = [
     {path: 'hotele', component: HotelsComponent},
     {path: 'samochody', component: CarsComponent},
     {path: 'discover', component: DiscoverComponent},
-    {path: 'loty/recommended', component: ResultTableComponent},
+    {path: 'loty/recommended/:countries/:id/:id', component: ResultTableComponent},
     {path: 'loty/rezerwacja/:id', component: ReservationComponent},
     {path: 'loty/booking/:id', component: BookingComponent},
     {path: 'loty/booking/confirmation/:id', component: ConfirmationComponent},
