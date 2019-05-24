@@ -1,5 +1,5 @@
 export class Hotel {
-  id: number;
+  hotelId: number;
   hotelName: string;
   city: string;
   firstDate: string;

@@ -13,8 +13,10 @@ export class HotelsComponent implements OnInit {
   hotels: Hotel[];
   filteredHotels: Hotel[];
 
+  isHotelChosen: number;
+  disableButton: boolean = true;
+
   private _searchText: string = "";
-  selected_count: number = 0;
 
   get searchText(): string {
     return this._searchText;
@@ -25,22 +27,22 @@ export class HotelsComponent implements OnInit {
     this.filteredHotels = this.filterHotels(value);
   }
 
-  filterHotels(searchString: string) {
-    return this.hotels.filter(hotel => hotel.city.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
-  }
-
   constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() {
     this.hotelsService.getHotels().subscribe(data => {
       this.hotels = data;
+      this.filteredHotels = this.hotels;
     });
-    this.filteredHotels = this.hotels;
   }
 
-  //Clear term types by user
-  clearFilter() {
-    this._searchText = "";
+  filterHotels(searchString: string) {
+    return this.hotels.filter(hotel => hotel.city.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
+  }
+
+  chooseHotel(index) {
+    this.isHotelChosen = index;
+    this.disableButton = false;
   }
 
 }

@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 0 140px;
+
+
+  .filter-wrap {
+    margin-bottom: 24px;
+
+    input {
+      border-radius: 8px;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      padding: 6px;
+    }
+  }
+
+  .hotels-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    table {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+      tr {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .active {
+    background-color: #D4D4CE;
+  }
+}

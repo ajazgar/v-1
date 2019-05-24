@@ -1,21 +1,33 @@
 <!-- Search Field -->
-<div>
-  <div class="filter-wrap">
-    <input [(ngModel)]="searchText" placeholder="Szukaj miasta" class="filter-input">
-    <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
-  </div>
+<div class="filter-wrap">
+  <input [(ngModel)]="searchText" placeholder="Szukaj miasta" class="filter-input">
 </div>
 
-<table class="table table-borderless">
-  <tbody>
-    <tr *ngFor="let hotel of filteredHotels">
+<div class="hotels-wrapper">
+  <table class="table table-borderless table-hover">
+    <thead>
+    <th scope="col">#</th>
+    <th scope="col">Hotel</th>
+    <th scope="col">Miasto</th>
+    <th scope="col">Zameldowanie</th>
+    <th scope="col">Wymeldowanie</th>
+    <th scope="col">Długość pobytu</th>
+    <th scope="col">Cena (PLN)</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let hotel of filteredHotels; let i = index" [ngClass]="{'active': isHotelChosen === i}"
+        (click)="chooseHotel(i)">
+      <td>{{hotel.hotelId}}</td>
       <td>{{hotel.hotelName}}</td>
       <td>{{hotel.city}}</td>
+      <td>{{hotel.firstDate}}</td>
+      <td>{{hotel.secDate}}</td>
+      <td>{{hotel.time}}</td>
+      <td>{{hotel.price}}</td>
     </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<app-recommendations [inspiration]="'Inspiracje podróżnicze'"></app-recommendations>
-<app-btn-secondary [buttonSecondaryText]="'Więcej informacji'"></app-btn-secondary>
-<app-reviews></app-reviews>
-<app-footer></app-footer>
+  <app-btn-primary [flightID]="isHotelChosen" [isBtnDisabled]="disableButton" [btnText]="'Zarezerwuj'" style="margin: 0 3px"></app-btn-primary>
+</div>
+
