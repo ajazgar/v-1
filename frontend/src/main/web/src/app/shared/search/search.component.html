@@ -5,33 +5,35 @@
 <div class="search">
   <div class="search-container">
 
-      <table class="table table-hover">
-        <thead>
-          <th scope="col">#</th>
-          <th scope="col">Wylot</th>
-          <th scope="col">Przylot</th>
-          <th scope="col">Data wylotu</th>
-          <th scope="col">Data przylotu</th>
-          <th scope="col">Klasa lotu</th>
-          <th scope="col">Czas lotu</th>
-          <th scope="col">Cena (PLN)</th>
-        </thead>
-        <tbody>
-          <tr [ngClass]="{'active': isFlightChosen === i}" *ngFor="let flight of flights; let i = index" (click)="chooseFlight(i)">
-            <td>{{flight.flightId}}</td>
-            <td>{{flight.departureCity}}</td>
-            <td>{{flight.arrivalCity}}</td>
-            <td>{{flight.departureDate}}</td>
-            <td>{{flight.arrivalDate}}</td>
-            <td>{{flight.flightClass}}</td>
-            <td>{{flight.time}}</td>
-            <td>{{flight.price}}</td>
-          </tr>
+    <table class="table table-hover">
+      <thead>
+      <th scope="col">#</th>
+      <th scope="col">Wylot</th>
+      <th scope="col">Przylot</th>
+      <th scope="col">Data wylotu</th>
+      <th scope="col">Data przylotu</th>
+      <th scope="col">Klasa lotu</th>
+      <th scope="col">Czas lotu</th>
+      <th scope="col">Cena (PLN)</th>
+      </thead>
+      <tbody>
+      <tr [ngClass]="{'active': isFlightChosen === i}" *ngFor="let flight of flights; let i = index"
+          (click)="chooseFlight(i)">
+        <td>{{flight.flightId}}</td>
+        <td>{{flight.departureCity}}</td>
+        <td>{{flight.arrivalCity}}</td>
+        <td>{{flight.departureDate}}</td>
+        <td>{{flight.arrivalDate}}</td>
+        <td>{{flight.flightClass}}</td>
+        <td>{{flight.time}}</td>
+        <td>{{flight.price}}</td>
+      </tr>
 
-        </tbody>
+      </tbody>
 
-      </table>
-    <app-btn-primary [flightID]="isFlightChosen" [isBtnDisabled]="disableButton" [btnText]="'Zarezerwuj' "style="margin: 0 3px" [routerLink]="['/loty/rezerwacja/', isFlightChosen]" ></app-btn-primary>
+    </table>
+    <app-btn-primary [flightID]="isFlightChosen" [isBtnDisabled]="disableButton" [btnText]="'Zarezerwuj' "
+                     style="margin: 0 3px" [routerLink]="['/loty/rezerwacja/', isFlightChosen]"></app-btn-primary>
 
   </div>
 

@@ -1,7 +1,36 @@
-<app-search></app-search>
-<app-recommendations [city]="'Popularne miasta'"></app-recommendations>
-<app-recommendations [country]="'Popularne kraje'"></app-recommendations>
-<app-recommendations [inspiration]="'Inspiracje podróżnicze'"></app-recommendations>
-<app-btn-secondary [buttonSecondaryText]="'Więcej informacji'"></app-btn-secondary>
-<app-reviews></app-reviews>
-<app-footer></app-footer>
+<!-- Search Field -->
+<div class="filter-wrap">
+  <input [(ngModel)]="searchText" placeholder="Szukaj miasta" class="filter-input">
+</div>
+
+<div class="hotels-wrapper">
+  <table class="table table-borderless table-hover">
+    <thead>
+    <th scope="col">#</th>
+    <th scope="col">Samochód</th>
+    <th scope="col">Miasto</th>
+    <th scope="col">Opis</th>
+    <th scope="col">Data odbioru</th>
+    <th scope="col">Data zwrotu</th>
+    <th scope="col">Cena (PLN)</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of filteredCars; let i = index" [ngClass]="{'active': isCarChosen === i}"
+        (click)="chooseCar(i)">
+      <td>{{car.id}}</td>
+      <td>{{car.carBrand}}</td>
+      <td>{{car.place}}</td>
+      <td>{{car.description}}</td>
+      <td>{{car.receivingDate}}</td>
+      <td>{{car.returnDate}}</td>
+      <td>{{car.price}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <app-btn-primary [carID]="isCarChosen"
+                   [isBtnDisabled]="disableButton"
+                   [btnText]="'Zarezerwuj'"
+                   [routerLink]="['/samochody/rezerwacja/', isCarChosen]" style="margin: 0 3px"></app-btn-primary>
+</div>
+

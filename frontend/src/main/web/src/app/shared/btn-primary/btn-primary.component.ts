@@ -11,6 +11,7 @@ export class BtnPrimaryComponent implements OnInit {
   @Input() isBtnDisabled: boolean;
   @Input() flightID: number;
   @Input() hotelID: number;
+  @Input() carID: number;
 
   constructor() { }
 

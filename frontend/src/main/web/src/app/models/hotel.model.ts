@@ -5,5 +5,5 @@ export class Hotel {
   firstDate: string;
   secDate: string;
   time: string;
-  price: string;
+  price: number;
 }
