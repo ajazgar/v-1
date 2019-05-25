@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {ResultTableService} from "../services/result-table.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HotelsService} from "../services/hotels.service";
+import {CarService} from "../services/car.service";
 
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.scss'],
-  providers: [ResultTableService, HotelsService]
+  providers: [ResultTableService, HotelsService, CarService]
 })
 export class ReservationComponent implements OnInit {
 
-  flights;
+  //flights
   id: number;
   departureCity: string;
   arrivalCity: string;
@@ -21,7 +22,7 @@ export class ReservationComponent implements OnInit {
   time: string;
   price: number;
 
-
+  //hotels
   hotelId: number;
   hotelName: string;
   city: string;
@@ -31,15 +32,24 @@ export class ReservationComponent implements OnInit {
   priceHotel: number;
   hotels;
 
+  //cars
+  carId: number;
+  carBrand: string;
+  place: string;
+  description: string;
+  receivingDate: string;
+  returnDate: string;
+  carPrice: number;
+
   constructor(private resultTableService: ResultTableService,
               private route: ActivatedRoute,
               private router: Router,
-              private hotelService: HotelsService) {
+              private hotelService: HotelsService,
+              private carService: CarService) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
       this.hotelId = params['hotelId'];
-      console.log('flights:' + this.id);
-      console.log('hotels:' + this.hotelId);
+      this.carId = params['carId'];
     });
   }
 
@@ -63,6 +73,16 @@ export class ReservationComponent implements OnInit {
       this.secDate = data.secDate;
       this.timeHotel = data.time;
       this.priceHotel = data.price;
+    });
+
+    this.carService.getCarById(this.carId).subscribe(data => {
+      this.carId = data.carId;
+      this.carBrand = data.carBrand;
+      this.place = data.place;
+      this.description = data.description;
+      this.receivingDate = data.receivingDate;
+      this.returnDate = data.returnDate;
+      this.carPrice = data.price;
     });
 
   }

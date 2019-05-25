@@ -9,8 +9,6 @@ import {ReservationComponent} from "./shared/reservation/reservation.component";
 import {BookingComponent} from "./pages/booking/booking.component";
 import {ConfirmationComponent} from "./shared/confirmation/confirmation.component";
 import {ArticleComponent} from "./pages/article/article.component";
-import {HotelReservationComponent} from "./pages/hotel-reservation/hotel-reservation.component";
-import {CarReservationComponent} from "./pages/car-reservation/car-reservation.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/loty', pathMatch: 'full'},
@@ -24,8 +22,7 @@ const routes: Routes = [
     {path: 'booking/:id', component: BookingComponent},
     {path: 'booking/confirmation/:id', component: ConfirmationComponent},
     {path: 'artykul/:articleTitle', component: ArticleComponent},
-    // {path: 'hotele/rezerwacja/:id', component: HotelReservationComponent},
-    {path: 'samochody/rezerwacja/:id', component: CarReservationComponent}
+    {path: 'samochody/rezerwacja/:carId', component: ReservationComponent}
 ];
 
 @NgModule({

@@ -1,9 +1,9 @@
 export class Car {
-  id: number;
+  carId: number;
   carBrand: string;
   place: string;
   description: string;
   receivingDate: string;
   returnDate: string;
-  price: number;
+  priceCar: number;
 }
