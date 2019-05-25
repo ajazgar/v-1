@@ -3,17 +3,20 @@ import {Passenger} from "../../models/passenger.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {BookingService} from "../../shared/services/booking.service";
 import {ResultTableService} from "../../shared/services/result-table.service";
+import {HotelsService} from "../../shared/services/hotels.service";
+import {CarService} from "../../shared/services/car.service";
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.scss'],
-  providers: [BookingService, ResultTableService]
+  providers: [BookingService, ResultTableService, CarService, HotelsService]
 })
 export class BookingComponent implements OnInit {
 
   passenger: Passenger = new Passenger();
 
+  //flights
   departureCity: string;
   arrivalCity: string;
   departureDate: string;
@@ -23,11 +26,38 @@ export class BookingComponent implements OnInit {
   price: number;
   id: number;
 
+  //hotels
+  hotelId: number;
+  hotelName: string;
+  city: string;
+  firstDate: string;
+  secDate: string;
+  timeHotel: string;
+  priceHotel: number;
+  hotels;
+
+  //cars
+  carId: number;
+  carBrand: string;
+  place: string;
+  description: string;
+  receivingDate: string;
+  returnDate: string;
+  carPrice: number;
+
+
   public contentEditable = false;
 
-  constructor(private route: ActivatedRoute, private bookingService: BookingService, private resultsService: ResultTableService) {
+  constructor(private route: ActivatedRoute,
+              //private bookingService: BookingService,
+              private resultsService: ResultTableService,
+              private router: Router,
+              private hotelService: HotelsService,
+              private carService: CarService) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
+      this.hotelId = params['hotelId'];
+      this.carId = params['carId'];
     });
   }
 

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {ResultTableService} from "../services/result-table.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CarService} from "../services/car.service";
+import {HotelsService} from "../services/hotels.service";
 
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
   styleUrls: ['./confirmation.component.scss'],
-  providers: [ResultTableService]
+  providers: [ResultTableService, ResultTableService, CarService, HotelsService]
 })
 export class ConfirmationComponent implements OnInit {
 
@@ -19,11 +21,36 @@ export class ConfirmationComponent implements OnInit {
   time: string;
   price: number;
 
+  //hotels
+  hotelId: number;
+  hotelName: string;
+  city: string;
+  firstDate: string;
+  secDate: string;
+  timeHotel: string;
+  priceHotel: number;
+  hotels;
+
+  //cars
+  carId: number;
+  carBrand: string;
+  place: string;
+  description: string;
+  receivingDate: string;
+  returnDate: string;
+  carPrice: number;
+
   discountPrice: string;
 
-  constructor(private resultsService: ResultTableService, private route: ActivatedRoute) {
+  constructor(private resultsService: ResultTableService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private hotelService: HotelsService,
+              private carService: CarService) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
+      this.hotelId = params['hotelId'];
+      this.carId = params['carId'];
     });
   }
 
