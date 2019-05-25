@@ -13,9 +13,9 @@ public class HotelService {
     @Autowired
     HotelDao hotelDao;
 
-    public List<Hotel> getHotelById(int hotelId) {
-
-        return hotelDao.getHotelById(hotelId);
+    public Hotel getHotelById(int hotelId) {
+        Hotel obj = hotelDao.getHotelById(hotelId);
+        return obj;
     }
 
     public List<Hotel> getAllHotels(){

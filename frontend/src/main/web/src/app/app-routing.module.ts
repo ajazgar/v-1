@@ -20,10 +20,11 @@ const routes: Routes = [
     {path: 'discover', component: DiscoverComponent},
     {path: 'loty/recommended/:countries/:id', component: ResultTableComponent},
     {path: 'loty/rezerwacja/:id', component: ReservationComponent},
+    {path: 'hotele/rezerwacja/:hotelId', component: ReservationComponent},
     {path: 'booking/:id', component: BookingComponent},
     {path: 'booking/confirmation/:id', component: ConfirmationComponent},
     {path: 'artykul/:articleTitle', component: ArticleComponent},
-    {path: 'hotele/rezerwacja/:id', component: HotelReservationComponent},
+    // {path: 'hotele/rezerwacja/:id', component: HotelReservationComponent},
     {path: 'samochody/rezerwacja/:id', component: CarReservationComponent}
 ];
 

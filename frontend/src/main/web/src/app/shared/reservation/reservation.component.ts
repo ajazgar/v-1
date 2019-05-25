@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {ResultTableService} from "../services/result-table.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {HotelsService} from "../services/hotels.service";
 
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.scss'],
-  providers: [ResultTableService]
+  providers: [ResultTableService, HotelsService]
 })
 export class ReservationComponent implements OnInit {
 
-  //flights: Object;
+  flights;
   id: number;
   departureCity: string;
   arrivalCity: string;
@@ -21,9 +22,24 @@ export class ReservationComponent implements OnInit {
   price: number;
 
 
-  constructor(private resultTableService: ResultTableService, private route: ActivatedRoute) {
+  hotelId: number;
+  hotelName: string;
+  city: string;
+  firstDate: string;
+  secDate: string;
+  timeHotel: string;
+  priceHotel: number;
+  hotels;
+
+  constructor(private resultTableService: ResultTableService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private hotelService: HotelsService) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
+      this.hotelId = params['hotelId'];
+      console.log('flights:' + this.id);
+      console.log('hotels:' + this.hotelId);
     });
   }
 
@@ -37,6 +53,16 @@ export class ReservationComponent implements OnInit {
       this.flightClass = data.flightClass;
       this.time = data.time;
       this.price = data.price;
+    });
+
+    this.hotelService.getHotelById(this.hotelId).subscribe(data => {
+      this.hotelId = data.hotelId;
+      this.hotelName = data.hotelName;
+      this.city = data.city;
+      this.firstDate = data.firstDate;
+      this.secDate = data.secDate;
+      this.timeHotel = data.time;
+      this.priceHotel = data.price;
     });
 
   }

@@ -2,9 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HotelsService {
 
   constructor(private http: HttpClient) {}
@@ -13,7 +11,7 @@ export class HotelsService {
     return this.http.get('http://localhost:8090/hotels');
   }
 
-  getHotelById(flightId: number): Observable<any> {
-    return this.http.get('http://localhost:8090/hotels/' + flightId);
+  getHotelById(hotelId: number): Observable<any> {
+    return this.http.get('http://localhost:8090/hotels/' + hotelId);
   }
 }

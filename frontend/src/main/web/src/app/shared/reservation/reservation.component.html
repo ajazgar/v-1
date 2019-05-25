@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="table-responsive" *ngIf="router.url === '/loty/rezerwacja/' + id">
 <table class="table table-borderless">
   <thead>
   <tr>
@@ -38,4 +38,36 @@
   </tbody>
 </table>
 </div>
+
+<div class="table-responsive" *ngIf="router.url === '/hotele/rezerwacja/' + hotelId">
+  <table class="table table-borderless">
+    <thead>
+    <th scope="col">#</th>
+    <th scope="col">Hotel</th>
+    <th scope="col">Miasto</th>
+    <th scope="col">Zameldowanie</th>
+    <th scope="col">Wymeldowanie</th>
+    <th scope="col">Długość pobytu</th>
+    <th scope="col">Cena (PLN)</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="col">{{hotelId}}</td>
+      <td class="col">{{city}}</td>
+      <td class="col">{{hotelName}}</td>
+      <td class="col">{{firstDate}}</td>
+      <td class="col">{{secDate}}</td>
+      <td class="col">{{timeHotel}}</td>
+
+      <td>
+        <span>{{priceHotel}} PLN</span>
+        <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/booking/', hotelId]"></app-btn-primary>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
 

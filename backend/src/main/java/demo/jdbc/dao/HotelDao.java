@@ -28,10 +28,10 @@ public class HotelDao {
         return this.jdbcTemplate.query(sql, rowMapper);
     }
 
-    public List<Hotel> getHotelById(int hotelId) {
+    public Hotel getHotelById(int hotelId) {
         String sql = "SELECT * FROM hotel WHERE id = ?";
 //        RowMapper<Hotel> rowMapper = new BeanPropertyRowMapper<Hotel>(Hotel.class);
         RowMapper<Hotel> rowMapper = new HotelRowMapper();
-        return this.jdbcTemplate.query(sql, rowMapper, hotelId);
+        return this.jdbcTemplate.queryForObject(sql, rowMapper, hotelId);
     }
 }

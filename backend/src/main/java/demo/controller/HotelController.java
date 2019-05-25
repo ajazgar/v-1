@@ -27,8 +27,8 @@ public class HotelController {
     }
 
     @GetMapping(path = "/{hotelId}")
-    public ResponseEntity<List<Hotel>> getHotelByCity(@PathVariable("hotelId") Integer hotelId) {
-        List<Hotel> list = hotelService.getHotelById(hotelId);
-        return new ResponseEntity<>(list, HttpStatus.OK);
+    public ResponseEntity<Hotel> getHotelByCity(@PathVariable("hotelId") Integer hotelId) {
+        Hotel hotel = hotelService.getHotelById(hotelId);
+        return new ResponseEntity<Hotel>(hotel, HttpStatus.OK);
     }
 }

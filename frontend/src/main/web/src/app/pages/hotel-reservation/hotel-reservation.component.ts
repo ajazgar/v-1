@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {HotelsService} from "../../shared/services/hotels.service";
 import {ActivatedRoute} from "@angular/router";
+import {ResultTableService} from "../../shared/services/result-table.service";
 
 @Component({
   selector: 'app-hotel-reservation',
   templateUrl: './hotel-reservation.component.html',
   styleUrls: ['./hotel-reservation.component.scss'],
-  providers: [HotelsService]
+  providers: [HotelsService, ResultTableService]
 })
 export class HotelReservationComponent implements OnInit {
 
@@ -18,13 +19,22 @@ export class HotelReservationComponent implements OnInit {
   time: string;
   price: string;
 
-  constructor(private hotelService: HotelsService, private route: ActivatedRoute) {
+  hotels;
+
+  constructor(private hotelService: HotelsService, private route: ActivatedRoute, private resultsService: ResultTableService) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
     });
   }
 
   ngOnInit() {
+    // this.resultsService.getFlightById(this.id).subscribe(data => {
+    //   this.id = data.id;
+    //   this.hotels = data;
+    //   }
+    // );
+
+
     this.hotelService.getHotelById(this.id).subscribe(data => {
       this.id = data.hotelId;
       this.hotelName = data.hotelName;
@@ -33,6 +43,7 @@ export class HotelReservationComponent implements OnInit {
       this.secDate = data.secDate;
       this.time = data.time;
       this.price = data.price;
+      this.hotels = data;
       console.log(this.id);
     });
   }
