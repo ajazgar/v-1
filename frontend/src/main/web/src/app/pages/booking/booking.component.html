@@ -17,7 +17,7 @@
     <input [(ngModel)]="passenger.discount" name="discount" type="checkbox" class="form-check-input" id="exampleCheck1" (change)="toggleEditable($event)">
     <label class="form-check-label" for="exampleCheck1">Zniżka studencka</label>
   </div>
-  <app-btn-primary class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/loty/booking/confirmation/', id]" ></app-btn-primary>
+  <app-btn-primary class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/booking/confirmation/', id]" ></app-btn-primary>
 </form>
 
 <!--<app-footer></app-footer>-->

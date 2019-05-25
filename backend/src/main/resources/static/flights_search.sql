@@ -31,7 +31,39 @@ CREATE TABLE hotel(id INT NOT NULL,
                     time VARCHAR(255),
                     price DOUBLE,
                     PRIMARY KEY (id))ENGINE=InnoDB;
-  
+                    
+CREATE TABLE car(id INT NOT NULL,
+				 carBrand VARCHAR(255),
+                 place VARCHAR(255),
+                 description VARCHAR(255),
+                 receivingDate VARCHAR(255),
+                 returnDate VARCHAR(255),
+                 price DOUBLE,
+                 PRIMARY KEY(id))ENGINE=InnoDB;
+
+INSERT INTO car VALUES(0, 'Citroen', 'Warszawa', '2os./klimatyzacja', '2019-06-14', '2019-06-24', 320);
+INSERT INTO car VALUES(1, 'Kia', 'Warszawa', '4os./klimatyzacja', '2019-06-14', '2019-06-24', 420); 
+INSERT INTO car VALUES(2, 'Citroen', 'Berlin', '4os./klimatyzacja', '2019-06-23', '2019-06-30', 540); 
+INSERT INTO car VALUES(3, 'Citroen', 'Berlin', '2os./klimatyzacja', '2019-06-23', '2019-06-30', 440); 
+INSERT INTO car VALUES(4, 'Kia', 'Berlin', '4os./klimatyzacja', '2019-06-23', '2019-06-30', 490); 
+INSERT INTO car VALUES(5, 'Kia', 'Moskwa', '4os./klimatyzacja', '2019-10-12', '2019-10-18', 490); 
+INSERT INTO car VALUES(6, 'Citroen', 'Moskwa', '2os./klimatyzacja', '2019-10-12', '2019-10-18', 390); 
+INSERT INTO car VALUES(7, 'Fiat', 'Rzym', '2os./klimatyzacja', '2019-07-12', '2019-07-16', 490); 
+INSERT INTO car VALUES(8, 'Kia', 'Rzym', '4os./klimatyzacja', '2019-07-12', '2019-07-16', 560); 
+INSERT INTO car VALUES(9, 'Citroen', 'Akureyri', '4os./klimatyzacja', '2019-09-22', '2019-10-01', 660);
+INSERT INTO car VALUES(10, 'Citroen', 'Reykjavik', '4os./klimatyzacja', '2019-08-14', '2019-08-20', 760);
+INSERT INTO car VALUES(11, 'Jeep', 'Nowy Jork', '4os./klimatyzacja', '2019-07-12', '2019-07-22', 960);
+INSERT INTO car VALUES(12, 'Kia', 'Nowy Jork', '4os./klimatyzacja', '2019-07-12', '2019-07-22', 860);
+INSERT INTO car VALUES(13, 'Citroen', 'Nowy Jork', '4os./klimatyzacja', '2019-07-12', '2019-07-22', 740);
+INSERT INTO car VALUES(14, 'Citroen', 'Barcelona', '4os./klimatyzacja', '2019-06-19', '2019-06-22', 560);
+INSERT INTO car VALUES(15, 'Fiat', 'Barcelona', '2os./klimatyzacja', '2019-06-19', '2019-06-22', 740);
+INSERT INTO car VALUES(16, 'Seat', 'Barcelona', '4os./klimatyzacja', '2019-06-19', '2019-06-22', 515);
+INSERT INTO car VALUES(17, 'Citroen', 'Sydney', '4os./klimatyzacja', '2019-08-14', '2019-08-24', 740);
+INSERT INTO car VALUES(18, 'Kia', 'Sydney', '2os./klimatyzacja', '2019-08-14', '2019-08-24', 540);
+INSERT INTO car VALUES(19, 'Kia', 'Hiroszima', '4os./klimatyzacja', '2019-06-07', '2019-06-20', 450);
+INSERT INTO car VALUES(20, 'Kia', 'Londyn', '4os./klimatyzacja', '2019-06-22', '2019-06-24', 670);
+INSERT INTO car VALUES(21, 'Citroen', 'Londyn', '2os./klimatyzacja', '2019-06-22', '2019-06-24', 450);
+INSERT INTO car VALUES(22, 'Citroen', 'Edynburg', '4os./klimatyzacja', '2019-06-25', '2019-06-30', 340);
   
 INSERT INTO hotel VALUES(0, 'Novotel', 'Warszawa', '2019-06-14', '2019-06-24', '10 dni', 365);	
 INSERT INTO hotel VALUES(1, 'Golden Tulip', 'Warszawa', '2019-06-14', '2019-06-24', '10 dni', 200);	

@@ -11,7 +11,7 @@ export class HotelsService {
     return this.http.get('http://localhost:8090/hotels');
   }
 
-  getHotelByCity(city: string): Observable<any> {
-    return this.http.get('http://localhost:8090/hotels/' + city);
+  getHotelById(flightId: number): Observable<any> {
+    return this.http.get('http://localhost:8090/hotels/' + flightId);
   }
 }

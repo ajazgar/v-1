@@ -28,6 +28,9 @@
     </tbody>
   </table>
 
-  <app-btn-primary [flightID]="isHotelChosen" [isBtnDisabled]="disableButton" [btnText]="'Zarezerwuj'" style="margin: 0 3px"></app-btn-primary>
+  <app-btn-primary [hotelID]="isHotelChosen"
+                   [isBtnDisabled]="disableButton"
+                   [btnText]="'Zarezerwuj'"
+                   [routerLink]="['/hotele/rezerwacja/', isHotelChosen]" style="margin: 0 3px"></app-btn-primary>
 </div>
 

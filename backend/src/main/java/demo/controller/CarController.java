@@ -1,8 +1,8 @@
 package demo.controller;
 
 
-import demo.model.Hotel;
-import demo.service.HotelService;
+import demo.model.Car;
+import demo.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,21 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/hotels")
-public class HotelController {
+@RequestMapping("/cars")
+public class CarController {
 
     @Autowired
-    private HotelService hotelService;
+    private CarService carService;
 
-    @GetMapping
-    public ResponseEntity<List<Hotel>> getAllFlights() {
-        List<Hotel> list = hotelService.getAllHotels();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+    @GetMapping(path="/{carId}")
+    public ResponseEntity<Car> getCarById(@PathVariable("carId") Integer carId) {
+        Car car = carService.getCarById(carId);
+        return new ResponseEntity<>(car, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/{hotelId}")
-    public ResponseEntity<List<Hotel>> getHotelByCity(@PathVariable("hotelId") Integer hotelId) {
-        List<Hotel> list = hotelService.getHotelById(hotelId);
+    @GetMapping
+    public ResponseEntity<List<Car>> getAllCars() {
+        List<Car> list = carService.getAllCars();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 }

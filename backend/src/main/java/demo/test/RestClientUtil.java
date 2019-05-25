@@ -1,5 +1,6 @@
 package demo.test;
 
+import demo.model.Car;
 import demo.model.Flight;
 import demo.model.Hotel;
 import demo.model.Passenger;
@@ -78,16 +79,30 @@ public class RestClientUtil {
         }
     }
 
-    public void getHotelByCityDemo() {
+    public void getHotelByIdDemo() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8090/hotels/{city}";
+        String url = "http://localhost:8090/hotels/{hotelId}";
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
         ResponseEntity<Hotel> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Hotel.class, 1);
         Hotel hotel = responseEntity.getBody();
         System.out.println("Id:"+hotel.getHotelId()+", Name:"+hotel.getHotelName()+", City:"+hotel.getCity()+", First Date:"+hotel.getFirstDate()+
                 ", Sec Date:"+hotel.getSecDate()+", Time:"+hotel.getTime()+", Price:"+hotel.getPrice());
+    }
+
+    public void getAllCarsDemo() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8090/cars";
+        HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
+        ResponseEntity<Car[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Car[].class);
+        Car[] car = responseEntity.getBody();
+//        for(Car car : cars) {
+//            System.out.println("Id:"+car.getCarId()+", Name:"+car.getcarName()+", City:"+car.getCity()+", First Date:"+car.getFirstDate()+
+//                    ", Sec Date:"+car.getSecDate()+", Time:"+car.getTime()+", Price:"+car.getPrice());
+//        }
     }
 
     public static void main(String args[]) {
@@ -97,6 +112,6 @@ public class RestClientUtil {
         util.getFlightByIdDemo();
         util.getAllFlightsDemo();
         util.getAllHotelsDemo();
-        util.getHotelByCityDemo();
+        util.getHotelByIdDemo();
     }
 }

@@ -10,6 +10,7 @@ export class BtnPrimaryComponent implements OnInit {
   @Input() btnText: string;
   @Input() isBtnDisabled: boolean;
   @Input() flightID: number;
+  @Input() hotelID: number;
 
   constructor() { }
 

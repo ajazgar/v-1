@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ResultTableService} from "../services/result-table.service";
-import {Flight} from "../../models/flight.model";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -21,11 +20,11 @@ export class ReservationComponent implements OnInit {
   time: string;
   price: number;
 
+
   constructor(private resultTableService: ResultTableService, private route: ActivatedRoute) {
     this.route.params.subscribe( params => {
       this.id = params['id'];
     });
-
   }
 
   ngOnInit() {
@@ -39,7 +38,6 @@ export class ReservationComponent implements OnInit {
       this.time = data.time;
       this.price = data.price;
     });
-
 
   }
 
