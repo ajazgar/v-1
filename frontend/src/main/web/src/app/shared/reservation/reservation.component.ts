@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ReservationComponent implements OnInit {
 
-  flights: Object;
+  //flights: Object;
   id: number;
   departureCity: string;
   arrivalCity: string;
