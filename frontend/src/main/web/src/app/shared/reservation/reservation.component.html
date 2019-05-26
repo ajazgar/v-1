@@ -40,63 +40,68 @@
 </table>
 
 
-<div class="table-responsive" *ngIf="router.url === '/hotele/rezerwacja/' + hotelId">
-  <table class="table table-borderless">
-    <thead>
-    <tr>
-      <th scope="col">Hotel</th>
-      <th scope="col">Miasto</th>
-      <th scope="col">Zameldowanie</th>
-      <th scope="col">Wymeldowanie</th>
-      <th scope="col">Długość pobytu</th>
-      <th scope="col">Cena (PLN)</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td class="col">
-        <img *ngIf="hotelId === 0 || hotelId === 3" src="../../../assets/img/novotel.jpg"/>
-        <img *ngIf="hotelId === 1" src="../../../assets/img/tulip.jpg"/>
-        <img *ngIf="hotelId === 2" src="../../../assets/img/centrum.jpg"/>
-        <img *ngIf="hotelId === 4" src="../../../assets/img/western-hotel.jpg"/>
-        <img *ngIf="hotelId === 5" src="../../../assets/img/park-inn.jpg"/>
-        <img *ngIf="hotelId === 6" src="../../../assets/img/novum-hotel.jpg"/>
-        <img *ngIf="hotelId === 7" src="../../../assets/img/matreshka.jpg"/>
-        <img *ngIf="hotelId === 8" src="../../../assets/img/aparthotel-moskwa.jpg"/>
-        <img *ngIf="hotelId === 9" src="../../../assets/img/domidea.jpg"/>
-        <img *ngIf="hotelId === 10" src="../../../assets/img/caravel.jpg"/>
-        <img *ngIf="hotelId === 11" src="../../../assets/img/trinity.jpg"/>
-        <img *ngIf="hotelId === 12" src="../../../assets/img/kjarnalundur.jpg"/>
-        <img *ngIf="hotelId === 13" src="../../../assets/img/arctic.jpg"/>
-        <img *ngIf="hotelId === 14" src="../../../assets/img/tribeca.jpg"/>
-        <img *ngIf="hotelId === 15" src="../../../assets/img/millenium.jpg"/>
-        <img *ngIf="hotelId === 16" src="../../../assets/img/paramount.jpg"/>
-        <img *ngIf="hotelId === 17" src="../../../assets/img/bcn.jpg"/>
-        <img *ngIf="hotelId === 18" src="../../../assets/img/balmoral.jpg"/>
-        <img *ngIf="hotelId === 19" src="../../../assets/img/catalunya.jpg"/>
-        <img *ngIf="hotelId === 20" src="../../../assets/img/song.jpg"/>
-        <img *ngIf="hotelId === 21" src="../../../assets/img/ultimo.jpg"/>
-        <img *ngIf="hotelId === 22" src="../../../assets/img/sunroute.jpg"/>
-        <img *ngIf="hotelId === 23" src="../../../assets/img/westbridge.jpg"/>
-        <img *ngIf="hotelId === 24" src="../../../assets/img/the%20blair.jpg"/>
-        <img *ngIf="hotelId === 25" src="../../../assets/img/edynburg.jpg"/>
-      </td>
+<table class="table table-borderless" *ngIf="router.url === '/hotele/rezerwacja/' + hotelId">
+  <thead>
+  <tr>
+    <th scope="col" style="z-index: -1; height: 60px">
+      <span>{{priceHotel}} PLN</span>
+      <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/hotele/booking/', hotelId]"></app-btn-primary>
+    </th>
+    <th scope="col">Hotel</th>
+    <th scope="col">Miasto</th>
+    <th scope="col">Zameldowanie</th>
+    <th scope="col">Wymeldowanie</th>
+    <th scope="col">Długość pobytu</th>
+    <th scope="col" style="z-index: -1; height: 60px">
+      <span>{{priceHotel}} PLN</span>
+      <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/hotele/booking/', hotelId]"></app-btn-primary>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="col">
+      <img *ngIf="hotelId === 0 || hotelId === 3" src="../../../assets/img/novotel.jpg"/>
+      <img *ngIf="hotelId === 1" src="../../../assets/img/tulip.jpg"/>
+      <img *ngIf="hotelId === 2" src="../../../assets/img/centrum.jpg"/>
+      <img *ngIf="hotelId === 4" src="../../../assets/img/western-hotel.jpg"/>
+      <img *ngIf="hotelId === 5" src="../../../assets/img/park-inn.jpg"/>
+      <img *ngIf="hotelId === 6" src="../../../assets/img/novum-hotel.jpg"/>
+      <img *ngIf="hotelId === 7" src="../../../assets/img/matreshka.jpg"/>
+      <img *ngIf="hotelId === 8" src="../../../assets/img/aparthotel-moskwa.jpg"/>
+      <img *ngIf="hotelId === 9" src="../../../assets/img/domidea.jpg"/>
+      <img *ngIf="hotelId === 10" src="../../../assets/img/caravel.jpg"/>
+      <img *ngIf="hotelId === 11" src="../../../assets/img/trinity.jpg"/>
+      <img *ngIf="hotelId === 12" src="../../../assets/img/kjarnalundur.jpg"/>
+      <img *ngIf="hotelId === 13" src="../../../assets/img/arctic.jpg"/>
+      <img *ngIf="hotelId === 14" src="../../../assets/img/tribeca.jpg"/>
+      <img *ngIf="hotelId === 15" src="../../../assets/img/millenium.jpg"/>
+      <img *ngIf="hotelId === 16" src="../../../assets/img/paramount.jpg"/>
+      <img *ngIf="hotelId === 17" src="../../../assets/img/bcn.jpg"/>
+      <img *ngIf="hotelId === 18" src="../../../assets/img/balmoral.jpg"/>
+      <img *ngIf="hotelId === 19" src="../../../assets/img/catalunya.jpg"/>
+      <img *ngIf="hotelId === 20" src="../../../assets/img/song.jpg"/>
+      <img *ngIf="hotelId === 21" src="../../../assets/img/ultimo.jpg"/>
+      <img *ngIf="hotelId === 22" src="../../../assets/img/sunroute.jpg"/>
+      <img *ngIf="hotelId === 23" src="../../../assets/img/westbridge.jpg"/>
+      <img *ngIf="hotelId === 24" src="../../../assets/img/the%20blair.jpg"/>
+      <img *ngIf="hotelId === 25" src="../../../assets/img/edynburg.jpg"/>
+    </td>
 
-      <td class="col">{{hotelName}}</td>
-      <td class="col">{{city}}</td>
-      <td class="col">{{firstDate}}</td>
-      <td class="col">{{secDate}}</td>
-      <td class="col">{{timeHotel}}</td>
+    <td scope="col">{{hotelName}}</td>
+    <td scope="col">{{city}}</td>
+    <td scope="col">{{firstDate}}</td>
+    <td scope="col">{{secDate}}</td>
+    <td scope="col">{{timeHotel}}</td>
 
-      <td>
-        <span>{{priceHotel}} PLN</span>
-        <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/hotele/booking/', hotelId]"></app-btn-primary>
-      </td>
-    </tr>
+    <td>
+      <span>{{priceHotel}} PLN</span>
+      <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/hotele/booking/', hotelId]"></app-btn-primary>
+    </td>
+  </tr>
 
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>
 
 
 <div class="table-responsive" *ngIf="router.url === '/samochody/rezerwacja/' + carId">
