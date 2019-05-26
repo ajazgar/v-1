@@ -1,4 +1,4 @@
-<form>
+<form *ngIf="router.url === '/loty/booking/' + id">
   <div class="form-group">
     <label for="exampleInputName">Imię</label>
     <input [(ngModel)]="passenger.passengerName" name="something" type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Podaj swoje imię">
@@ -17,7 +17,55 @@
     <input [(ngModel)]="passenger.discount" name="discount" type="checkbox" class="form-check-input" id="exampleCheck1" (change)="toggleEditable($event)">
     <label class="form-check-label" for="exampleCheck1">Zniżka studencka</label>
   </div>
-  <app-btn-primary class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/booking/confirmation/', id]" ></app-btn-primary>
+  <app-btn-primary class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/loty/booking/confirmation/', id]" ></app-btn-primary>
+</form>
+
+<!--<app-footer></app-footer>-->
+
+<form *ngIf="router.url === '/hotele/booking/' + hotelId">
+  <div class="form-group">
+    <label for="inputName">Imię</label>
+    <input [(ngModel)]="passenger.passengerName" name="something" type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Podaj swoje imię">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group">
+    <label for="inputSurname">Nazwisko</label>
+    <input [(ngModel)]="passenger.surname" name="something" type="text" class="form-control" id="inputSurname" placeholder="Podaj swoje nazwisko">
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input [(ngModel)]="passenger.email" name="mail" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Podaj swój email">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group form-check">
+    <input [(ngModel)]="passenger.discount" name="discount" type="checkbox" class="form-check-input" id="exampleCheck" (change)="toggleEditable($event)">
+    <label class="form-check-label" for="exampleCheck">Zniżka studencka</label>
+  </div>
+  <app-btn-primary class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/hotele/booking/confirmation/', hotelId]" ></app-btn-primary>
+</form>
+
+<!--<app-footer></app-footer>-->
+
+<form *ngIf="router.url === '/samochody/booking/' + carId">
+  <div class="form-group">
+    <label for="inputNameCar">Imię</label>
+    <input [(ngModel)]="passenger.passengerName" name="something" type="text" class="form-control" id="inputNameCar" aria-describedby="emailHelp" placeholder="Podaj swoje imię">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group">
+    <label for="inputSurnameCar">Nazwisko</label>
+    <input [(ngModel)]="passenger.surname" name="something" type="text" class="form-control" id="inputSurnameCar" placeholder="Podaj swoje nazwisko">
+  </div>
+  <div class="form-group">
+    <label for="inputEmailCar">Email</label>
+    <input [(ngModel)]="passenger.email" name="mail" type="email" class="form-control" id="inputEmailCar" aria-describedby="emailHelp" placeholder="Podaj swój email">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group form-check">
+    <input [(ngModel)]="passenger.discount" name="discount" type="checkbox" class="form-check-input" id="exampleCheckCar" (change)="toggleEditable($event)">
+    <label class="form-check-label" for="exampleCheckCar">Zniżka studencka</label>
+  </div>
+  <app-btn-primary class="form-btn" [btnText]="'Kup bilet'" style=" align-self: center;" [routerLink]="['/samochody/booking/confirmation/', carId]" ></app-btn-primary>
 </form>
 
 <!--<app-footer></app-footer>-->

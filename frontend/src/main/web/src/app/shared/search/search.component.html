@@ -1,11 +1,14 @@
 <div class="search-header">
   <div class="header-text">Wybierz lot</div>
 </div>
+<div class="filter-wrap">
+  <input [(ngModel)]="searchText" placeholder="Szukaj miasta" class="filter-input">
+</div>
 
 <div class="search">
   <div class="search-container">
 
-    <table class="table table-hover">
+    <table class="table table-hover table-borderless">
       <thead>
       <th scope="col">#</th>
       <th scope="col">Wylot</th>
@@ -17,7 +20,7 @@
       <th scope="col">Cena (PLN)</th>
       </thead>
       <tbody>
-      <tr [ngClass]="{'active': isFlightChosen === i}" *ngFor="let flight of flights; let i = index"
+      <tr [ngClass]="{'active': isFlightChosen === i}" *ngFor="let flight of filteredFlights; let i = index"
           (click)="chooseFlight(i)">
         <td>{{flight.flightId}}</td>
         <td>{{flight.departureCity}}</td>

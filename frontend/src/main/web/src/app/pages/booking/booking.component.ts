@@ -72,6 +72,26 @@ export class BookingComponent implements OnInit {
       this.time = data.time;
       this.price = data.price;
     });
+
+    this.hotelService.getHotelById(this.hotelId).subscribe(data => {
+      this.hotelId = data.hotelId;
+      this.hotelName = data.hotelName;
+      this.city = data.city;
+      this.firstDate = data.firstDate;
+      this.secDate = data.secDate;
+      this.timeHotel = data.time;
+      this.priceHotel = data.price;
+    });
+
+    this.carService.getCarById(this.carId).subscribe(data => {
+      this.carId = data.carId;
+      this.carBrand = data.carBrand;
+      this.place = data.place;
+      this.description = data.description;
+      this.receivingDate = data.receivingDate;
+      this.returnDate = data.returnDate;
+      this.carPrice = data.price;
+    });
   }
 
   toggleEditable(event) {

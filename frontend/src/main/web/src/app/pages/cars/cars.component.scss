@@ -10,6 +10,18 @@
   flex-direction: column;
   padding: 0 140px;
 
+  .search-header {
+    display: flex;
+    margin-bottom: 12px;
+    align-self: flex-start;
+
+    .header-text {
+      color: #D4D4CE;
+      margin-right: 24px;
+      font-weight: bold;
+    }
+  }
+
 
   .filter-wrap {
     margin-bottom: 24px;
@@ -21,9 +33,12 @@
     }
   }
 
-  .hotels-wrapper {
+  .cars-wrapper {
     display: flex;
     flex-direction: row;
+    background-color: #D4D4CE;
+    padding: 12px;
+    border-radius: 8px;
 
     table {
       background-color: #ffffff;
