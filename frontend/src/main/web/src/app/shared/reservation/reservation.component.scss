@@ -5,12 +5,11 @@
   padding: 0 140px;
   flex-direction: column;
 
-  .table {
+  table {
     background-color: #ffffff;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
 
 
     .column-price {
@@ -19,12 +18,17 @@
 
     tr {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
+      width: 100%;
+
+      td, th {
+        width: 175px !important;
+      }
     }
 
     img {
-      width: 100%;
+      width: 150px;
     }
   }
 }

@@ -1,44 +1,44 @@
-<div class="table-responsive" *ngIf="router.url === '/loty/rezerwacja/' + id">
-  <table class="table table-borderless">
-    <thead>
-    <tr>
-      <th class="col">Nazwa linii</th>
-      <th class="col">Wylot</th>
-      <th class="col">Przylot</th>
-      <th class="col">Data wylotu</th>
-      <th class="col">Data przylotu</th>
-      <th class="col">Czas lotu</th>
-      <th class="col">Klasa lotu</th>
-      <td class="col">
-        <app-btn-primary class="btn-none" [btnText]="'Rezerwuj'"></app-btn-primary>
-      </td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td class="col">
-        <img *ngIf="id === 0 || id === 4 || id === 10" src="../../../assets/img/Lufthansa_logo_1.png"/>
-        <img *ngIf="id === 1 || id === 8" src="../../../assets/img/Aeroflot_1932.png"/>
-        <img *ngIf="id === 2 || id === 3 || id === 6 || id === 9 || id === 11 || id === 12"
-             src="../../../assets/img/screen1.jpg"/>
-        <img *ngIf="id === 5 || id == 7" src="../../../assets/img/lot.png"/>
-      </td>
-      <td class="col">{{departureCity}}</td>
-      <td class="col">{{arrivalCity}}</td>
-      <td class="col">{{departureDate}}</td>
-      <td class="col">{{arrivalDate}}</td>
-      <td class="col">{{time}}</td>
-      <td class="col">{{flightClass}}</td>
+<table class="table table-borderless" *ngIf="router.url === '/loty/rezerwacja/' + id">
+  <thead>
+  <tr>
+    <th scope="col">Nazwa linii</th>
+    <th scope="col">Wylot</th>
+    <th scope="col">Przylot</th>
+    <th scope="col">Data wylotu</th>
+    <th scope="col">Data przylotu</th>
+    <th scope="col">Czas lotu</th>
+    <th scope="col">Klasa lotu</th>
+    <td scope="col" style="z-index: -1">
+      <span>{{price}} PLN</span>
+      <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/loty/booking/', id]"></app-btn-primary>
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="col">
+      <img *ngIf="id === 0 || id === 4 || id === 10" src="../../../assets/img/Lufthansa_logo_1.png"/>
+      <img *ngIf="id === 1 || id === 8" src="../../../assets/img/Aeroflot_1932.png"/>
+      <img *ngIf="id === 2 || id === 3 || id === 6 || id === 9 || id === 11 || id === 12"
+           src="../../../assets/img/screen1.jpg"/>
+      <img *ngIf="id === 5 || id == 7" src="../../../assets/img/lot.png"/>
+    </td>
+    <td scope="col">{{departureCity}}</td>
+    <td scope="col">{{arrivalCity}}</td>
+    <td scope="col">{{departureDate}}</td>
+    <td scope="col">{{arrivalDate}}</td>
+    <td scope="col">{{time}}</td>
+    <td scope="col">{{flightClass}}</td>
 
-      <td>
-        <span>{{price}} PLN</span>
-        <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/loty/booking/', id]"></app-btn-primary>
-      </td>
-    </tr>
+    <td>
+      <span>{{price}} PLN</span>
+      <app-btn-primary [btnText]="'Rezerwuj'" [routerLink]="['/loty/booking/', id]"></app-btn-primary>
+    </td>
+  </tr>
 
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>
+
 
 <div class="table-responsive" *ngIf="router.url === '/hotele/rezerwacja/' + hotelId">
   <table class="table table-borderless">
