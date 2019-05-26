@@ -31,10 +31,6 @@ export class RecommendationsComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigateToJapan() {
-    this.router.navigate(['/loty/recommended/japonia/1/8']);
-  }
-
   scrollToTop() {
     window.scrollTo(0, 0);
   }

@@ -37,3 +37,9 @@
                    [routerLink]="['/hotele/rezerwacja/', isHotelChosen]" style="margin: 0 3px"></app-btn-primary>
 </div>
 
+
+<app-recommendations [city]="'Popularne miasta'"></app-recommendations>
+<app-recommendations [inspiration]="'Inspiracje podróżnicze'"></app-recommendations>
+<a routerLink="/discover"><app-btn-secondary [buttonSecondaryText]="'Więcej informacji'"></app-btn-secondary></a>
+<app-reviews></app-reviews>
+<app-footer></app-footer>
